@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 이미지 병합</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+var orgImgData;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//병합 설정
+function composite(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	
+	//기존 이미지 삭제 및 현 상태 저장
+	ctx.save();
+	ctx.clearRect(0,0,canvas.width,canvas.height);
+	
+	//첫 번째 요소 사각형 생성
+	ctx.fillStyle="#09F";
+	ctx.fillRect(100,50,100,100);	
+	
+	//병합 타입 설정
+	var type=document.getElementById('type').value;
+	ctx.globalCompositeOperation=type;
+	
+	//두 번째 요소 원 그림
+	ctx.fillStyle="#F30";
+	ctx.beginPath();
+	ctx.arc(180,120,50,0,Math.PI*2,true);
+	ctx.fill();
+	//설정 초기화
+	ctx.restore();		
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 이미지 병합</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>먼저 그리진 요소와 나중에 그려지는 이미지의 병합 형태를 지정한다.</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>globalCompositeOperation=[cType]</code> : 병합 형태를 지정함.</dd>
+        <dt>매개변수</dt>
+        <dd><code>[cType]</code> : 병합 설정의 옵션을 지정한다.
+        	<ul>
+                <li><code>source-over</code> : 나중에 그려진 요소가 먼저 그려진 요소를 위에 표시됨(일반적인 형식)</li>
+                <li><code>source-in</code> : 나중에 그려진 요소가 먼저 그려진 요소와 겹쳐지는 부분만 표시됨</li>
+                <li><code>source-out</code> : 나중에 그려진 요소가 먼저 그려진 요소와 겹치지 않은 부분만 표시됨</li>
+                <li><code>source-atop</code> : 나중에 그려진 요소가 먼저 그려진 요소위에 겹쳐진 부분 만큼 표시됨</li>
+                <li><code>destination-over</code> : 나중에 그러진 요소가 먼저 그려진 요소 아래 표시됨</li>
+                <li><code>destination-in</code>: 먼저 그려진 요소가 나중에 그려진 요소와 겹쳐지는 부분만 표시됨</li>
+                <li><code>destination-out</code>: 먼저 그려진 요소가 나중에 그려진 요소와 겹쳐지지 않는 부분만 표시됨</li>
+                <li><code>destination-atop</code>: 먼저 그려진 요소가 나중에 그려진 요소위에 겹쳐진 부분 만큼 표시됨</li>
+                <li><code>lighter</code>: 겹쳐진 부분이 밝게 표시됨</li>
+                <li><code>darker</code>: 겹쳐진 부분이 어둡게 표시됨</li>
+                <li><code>copy</code>: 나중에 그려진 요소만 표시됨</li>
+                <li><code>xor</code>: 겹쳐진 부분은 표시되지 않음</li>	
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+var orgImgData;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//병합 설정
+function composite(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	
+	//기존 이미지 삭제 및 현상태 저장
+	ctx.save();
+	ctx.clearRect(0,0,canvas.width,canvas.height);
+	
+	//첫 번째 요소 사각형 생성
+	ctx.fillStyle="#09F";
+	ctx.fillRect(100,50,100,100);	
+	
+	//병합 타입 설정
+	var type=document.getElementById('type').value;
+	ctx.globalCompositeOperation=type;
+	
+	//두 번째 요소 원 그림
+	ctx.fillStyle="#F30";
+	ctx.beginPath();
+	ctx.arc(180,120,50,0,Math.PI*2,true);
+	ctx.fill();
+	//설정 초기화
+	ctx.restore();		
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <canvas id="test" width="300" height="200">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+        	<p><button type="button" onClick="iniCanvas()">초기화</button>
+            <label for="type">병합 형태</label>
+        	<select name="type" id="type">
+            	<option vlaue="source-over">source-over</option>
+                <option vlaue="source-in">source-in</option>
+                <option vlaue="source-out">source-out</option>
+                <option vlaue="source-atop">source-atop</option>
+                <option vlaue="destination-over">destination-over</option>
+                <option vlaue="destination-in">destination-in</option>
+                <option vlaue="destination-out">destination-out</option>
+                <option vlaue="destination-atop">destination-atop</option>
+                <option vlaue="lighter">lighter</option>
+                <option vlaue="darker">darker</option>
+                <option vlaue="copy">copy</option>
+                <option vlaue="xor">xor</option>
+            </select>         				
+        <button onclick="composite();" type="button">실행</button></p>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 이미지 병합</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

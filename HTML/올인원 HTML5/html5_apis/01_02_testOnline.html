@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>manifest Test - online : API</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#exampleSub div{
+		margin:0 auto;
+		margin-bottom:15px;
+		padding:20px;
+		border:#CCC solid 5px;
+		text-align:center;
+		background:#FC6;
+	}
+	#exampleSub h3{
+		color:#808285;
+		padding-bottom:5px;
+		text-align:left;
+		font-family:arial;
+		font-weight:bold;
+	}
+	#exampleSub p{
+		margin-bottom:10px;
+		font-weight:bold;		
+	}
+	#exampleSub p strong{
+		color:#F00;
+		font-size:25px;
+	}
+	#goToBack{
+		padding:10px;
+		line-height:50px;
+		border:#666 double 3px;
+		font-weight:bold;
+		background:#0F9;
+	}
+</style>
+</head>
+<body>
+<h1>manifest Test - online</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>cache manifest</dt>
+        <dd>오프라인 지원을 위한 브라우저 캐시</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+CACHE MANIFEST
+#ver 0.1a
+#오프라인으로 저장할 자원들#
+CACHE:
+01_00_manifest.html
+./css/template.css
+./img/btn_close.png
+./img/btn_open.png
+./js/viewCode.js
+01_03_testOffline.html
+
+#요청 자원이 없을때 표시할 대체 자원의 지정#
+FALLBACK:
+01_02_testOnline.html 01_03_testOffline.html
+
+#반드시 네트워크로 접속해야 하는 자원의 지정#
+NETWORK:
+01_04_onlyOnline.html   
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3>manifest Test - online</h3>
+        <div>
+          <p>여기는 <strong>온라인</strong> 상 페이지입니다</p>
+          <a id="goToBack" href="01_00_manifest.html">되돌아 가기</a>
+        </div>
+	</div>
+</div>
+<h1>manifest Test - online</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

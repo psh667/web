@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>[style]:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#cssControl{
+		fill:#f00;
+		stroke:rgb(0,0,255);
+		stroke-width:10;
+		opacity:0.4;
+	}
+</style>
+</head>
+
+<body>
+<h1>[style]</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>[style]</dt>
+        <dd>SVG요소의 스타일지정</dd>
+        <dt>속성</dt>
+        <dd><code>fill</code> : 체움 색상</dd>
+        <dd><code>stroke</code> : 선 색상</dd>
+        <dd><code>stroke-width</code> : 선 두께</dd>
+        <dd><code>opacity</code> : 투명도</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	#cssControl{
+		fill:#f00;
+		stroke:rgb(0,0,255);
+		stroke-width:10;
+		opacity:0.4;
+	}
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;rect x="10" width="90" height="90" style="fill:#00f" /&gt;
+    &lt;rect x="110" y="0" width="90" height="90" style="opacity:0.3" /&gt;
+    &lt;rect x="10" y="100" width="90" height="90"
+    	style="stroke-width:10;stroke:rgba(255,0,0,0.5)" /&gt;
+    &lt;rect id="cssControl" x="110" y="100" width="90" height="90" /&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <svg>
+       		<rect x="10" width="90" height="90" style="fill:#00f" />
+            <rect x="110" y="0" width="90" height="90" style="opacity:0.3" />
+            <rect x="10" y="100" width="90" height="90" style="stroke-width:10;stroke:rgba(255,0,0,0.5)" />
+            <rect id="cssControl" x="110" y="100" width="90" height="90" />
+       </svg>
+    </div>
+</div>
+<h1>[style]</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

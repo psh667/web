@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>line-height:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#outBox{
+	width:400px;
+	border:#f00 solid 5px;
+	background:#CCC;
+}
+
+#inBox01{
+	background:#0F9;
+	margin:30px;
+	line-height:15px;
+}
+#inBox02{
+	background:#FC0;
+	margin:30px;
+	line-height:30px;
+}
+
+
+
+</style>
+</head>
+
+<body>
+<h1>line-height</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>line-height:[length];</dt>
+        <dd>line-box의 높이를 지정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #inBox01{
+            background:#0F9;
+            margin:30px;
+            line-height:15px;
+        }
+        #inBox02{
+            background:#FC0;
+            margin:30px;
+            line-height:30px;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="outBox">
+        <div id="inBox01">
+            [#inBox01-text] -|- [#inBox01-text] -|- [#inBox01-text] -|- [#inBox01-text] -|- [#inBox01-text] -|- [#inBox01-text] -|- [#inBox01-text]
+        </div>
+        <div id="inBox02">
+            [#inBox02-text] -|- [#inBox02-text] -|- [#inBox02-text] -|- [#inBox02-text] -|- [#inBox02-text] -|- [#inBox02-text] -|- [#inBox01-text]
+        </div>
+    </div>
+     </div>
+</div>
+<h1>line-height</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

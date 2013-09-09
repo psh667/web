@@ -1,0 +1,14 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"> 
+    <error-page>
+        <error-code>500</error-code>
+        <location>/CommonError.jsp</location>
+    </error-page>
+    <servlet>
+        <servlet-name>bbs-list-servlet</servlet-name>
+        <servlet-class>web.BBSListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>bbs-list-servlet</servlet-name>
+        <url-pattern>/bbs-list</url-pattern>
+    </servlet-mapping>
+</web-app> 

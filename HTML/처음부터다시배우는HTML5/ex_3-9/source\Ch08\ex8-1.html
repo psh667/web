@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>font-face 연습</title>
+
+<style type="text/css">
+@font-face { font-family:'jeju'; 
+            src: url('images/JejuHallasan.eot'); 
+			 src: local('☺'), url('images/JejuHallasan.woff') format("woff"), url('images/Hallasan.ttf') format("truetype"); 
+			 }
+
+.text {
+	font-family:'jeju', "맑은 고딕";
+	font:'jeju';
+	font-size:40px;
+	color:#36F;
+}
+
+
+
+</style>
+</head>
+
+<body>
+<p class="text"> 제주 한라산체 font-face 테스트</p>
+
+
+</body>
+</html>

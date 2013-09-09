@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>hidden : 공통속성</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#exampleSub div{
+		margin:0 auto;
+		margin-bottom:15px;
+		padding:20px;
+		border:#CCC solid 5px;
+		text-align:center;
+	}
+	#exampleSub h3{
+		color:#808285;
+		padding-bottom:5px;
+		text-align:left;
+		font-family:arial;
+		font-weight:bold;
+	}
+	#exampleSub p{
+		margin:0 15px 15px 20px;
+		color:#03F;
+		font-size:15px;
+	}
+</style>
+</head>
+<body>
+<h1>hidden</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+		<dt>hidden</dt>
+    	<dd>해당요소를 정보 구조에서 완전히 제외함</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;div id="exampleSub"&gt;
+    &lt;h3&gt;일반적인 &lt;p&gt; 요소&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;p&gt;이 문장은 일반적인 &amp;lt;p&amp;gt; 요소로 작성되었습니다.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;draggable="false"&lt;/h3&gt; 
+    &lt;div&gt;
+        &lt;p hidden="hidden"&gt;
+            이문장은 [hidden] 속성이 적용된 &amp;lt;p&amp;gt; 요소로 작성되었습니다.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3>일반적인 &lt;p&gt; 요소</h3>
+        <div>
+            <p>이 문장은 일반적인 &lt;p&gt; 요소로 작성되었습니다.</p>
+        </div>
+		<h3>hidden="hidden"</h3> 
+        <div>
+            <p hidden="hidden">
+                이문장은 [hidden] 속성이 적용된 &lt;p&gt; 요소로 작성되었습니다.
+            </p>
+        </div>
+	</div>
+</div>
+<h1>hidden</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

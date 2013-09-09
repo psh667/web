@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>itemscope : 마이크로 데이타</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#exampleSub div{
+		margin:0 auto;
+		margin-bottom:15px;
+		padding:10px;
+		border:#CCC solid 5px;
+		text-align:center;
+	}
+	#exampleSub h3{
+		color:#808285;
+		padding-bottom:5px;
+		text-align:left;
+		font-family:arial;
+		font-weight:bold;
+	}
+</style>
+</head>
+<body>
+<h1>itemscope</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+		<dt>itemscope</dt>
+    	<dd>마이크로 데이터 영역의 지정</dd>
+		<dt>itemtype</dt>
+    	<dd>마이크로 데이터의 형식 지정</dd>
+		<dt>itemprop</dt>
+    	<dd>마이크로 데이터 프로퍼티 작성 </dd>
+		<dt>itemref</dt>
+    	<dd>마이크로 데이터 프로퍼티가 속하는 영역의 지정</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;h3&gt;마이크로 데이터를 이용한 시멘틱 마크업&lt;/h3&gt;
+&lt;div id="microDataDiv" itemscope="itemscope" 
+  itemtype="http://microformats.org/profile/hcalendar"&gt;
+  &lt;h4 itemprop="summary"&gt;회의 안내&lt;/h4&gt;
+  &lt;p&gt; 안녕하세요?
+    2011 &lt;em class="coforward"&gt;co&lt;span&gt;Forward&lt;/span&gt;&lt;/em&gt; 운영회의 안내입니다.
+    안건은 &lt;em itmeprop="summary"&gt;팀사이트의 HTML5+CSS3 적용에 관한 의견교환&lt;/em&gt; 이며 
+    일시와 장소는 &lt;span itemprop="location"&gt;○○ 회의실&lt;/span&gt;에서
+    &lt;time datetime="2011-03-25T15:00" itemprop="dtstart"&gt;3월 25일 금요일 오후 3시&lt;/time&gt;
+    입니다.
+    구성원 여러분의 좋은 의견 기대합니다. &lt;/p&gt;
+&lt;/div&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3>마이크로 데이터를 이용한 시멘틱 마크업</h3>
+        <div id="microDataDiv" itemscope="itemscope" itemtype="http://microformats.org/profile/hcalendar">
+       		<h4 itemprop="summary">회의 안내</h4>
+ 			<p>
+            	안녕하세요?
+                2011 <em class="coforward">co<span>Forward</span></em> 운영회의 안내입니다.
+                안건은 <em itmeprop="summary">팀사이트의 HTML5+CSS3 적용에 관한 의견교환</em> 이며 
+                일시와 장소는 <span itemprop="location">○○ 회의실</span>에서 <time datetime="2011-03-25T15:00" itemprop="dtstart">3월 25일 금요일 오후 3시</time>입니다.
+                구성원 여러분의 좋은 의견 기대합니다. 
+  			</p>
+        </div>
+	</div>
+</div>
+<h1>itemscope</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

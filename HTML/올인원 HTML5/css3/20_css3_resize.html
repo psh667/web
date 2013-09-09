@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>resize</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub p{font-family:arial;font-weight:bold;text-transform:uppercase;color:#808285;padding-bottom:5px;}
+
+#exampleSub div{
+	margin:0 auto;
+	margin-bottom:15px;
+	border:#999 solid 2px;
+	width:70%;
+	padding:20px;
+}
+#resize_Box{
+	resize:both;
+	overflow:auto;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : resize</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>resize</dt>
+        <dd>요소의 크기를 사용자가 변경할수 있도록함</dd>
+        <dt>속성 값</dt>
+        <dd><code>horizontal</code> : 가로방향의 크기를 변경을 할수 있음</dd>
+        <dd><code>horizontal</code> : 세로방향의 크기를 변경을 할수 있음</dd>
+        <dd><code>both</code> : 양 방향의 크기를 변경을 할수 있음</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #exampleSub div{
+            margin:0 auto;
+            margin-bottom:15px;
+            border:#999 solid 2px;
+            width:70%;
+            padding:20px;
+        }
+        #resize_Box{
+            resize:both;
+            overflow:auto;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="noResize_Box" >
+            <p>No Resize Box</p>
+     	</div>
+        <div id="resize_Box">
+            <p>Resize Box</p>
+     	</div>
+     </div>
+</div>
+
+<h1>CSS3 : resize</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

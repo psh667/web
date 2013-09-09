@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>elementSelector:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+#exampleSub *{
+	line-height:18px;
+	margin:10px 15px;
+}
+
+span{
+	color:#f00;
+}
+</style>
+</head>
+
+<body>
+<h1>element Selector</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>element 선택자</dt>
+        <dd>현재 HTML 문서에 있는 지정된 tagName을 모두 선택한다 </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        span{
+            color:#f00;
+        }
+    &lt;/style&gt;
+        
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3 >[h3] element </h3>
+		<p>[p] elemet</p>
+        <p>[p] elemet <span>[p-span] element </span></p>
+        <p >[p] element <span>[p-span] element</span></p>
+        <div >
+            [div] element 
+            <p>[div-p] element </p>
+            <p>[div-p] element <a  href="#">[div-p-a element] </a></p>
+        </div>
+     </div>
+</div>
+
+<h1>element Selector</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+<?php echo "테스트"; ?>
+</body>
+</html>

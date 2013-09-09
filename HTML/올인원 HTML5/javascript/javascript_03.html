@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" language="javascript">
+/**********************************************
+javascript를 이용하여 HTML요소를 추가 삭제
+***********************************************/
+function addElement(){
+	//input의 내용을 입력 입력받음
+	var textValue=document.getElementById("textValue").value;
+	//문자열 값이 없으면 실행중단
+	if(textValue==""){
+		alert("web이 표시될 수 있다고 생각되는 기기를 입력하세요")
+		return false;
+	}
+	//문자열 요소를 생성
+	var textNode=document.createTextNode(textValue);
+	//li요소의 를 생성하여 textNode를 컨텐츠 요소로 추가
+	var newLiElement=document.createElement("li");
+		newLiElement.appendChild(textNode);
+	//ul요소에 새로 생성한 li요소를 컨텐츠 요소로 추가
+	var ulElement=document.getElementsByTagName('ul')[0];
+		ulElement.appendChild(newLiElement);	
+}
+
+function removeElement(){
+	//ul요소에 li갯수를 추출
+	var ulElement=document.getElementsByTagName('ul')[0];
+	var	liElements=ulElement.getElementsByTagName('li');
+	var liCnt=liElements.length;
+	//마지막 li요소를 삭제함
+	ulElement.removeChild(liElements[liCnt-1]);
+}
+</script>
+<title>javascript : 요소의 추가 삭제</title>
+</head>
+<body>
+ <div id="linkList">
+ 	<h1>Web이 표시될수 있는 기기들</h1>
+    <ul>
+    	<li class="odd">PC</li>
+        <li>스마트 폰</li>
+        <li class="odd">인터넷 TV</li>
+    </ul>
+ </div><!--End of #linkList-->
+ <div id="description">
+ 	<p>웹은 <strong class="odd">장치 운영체제 독립적</strong>으로 정보를 전달하는 것을 목적으로 한다.</p>
+ </div><!--End of #linkList-->
+ <div id="test">
+     <label for="textValue">웹이 표시될수 있는 기기 : </label><input type="text" id="textValue" />
+     <button type="button" onclick="addElement()">addElement</button><br />
+     마지막 요소의 삭제 <button type="button" onclick="removeElement()">removeElement</button>
+ </div>
+</body>
+</html>

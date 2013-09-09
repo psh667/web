@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;video&gt; - API;</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript" src="js/videoPalyer.js"></script>
+<style type="text/css">
+.play{
+	transform:rotate(15deg);
+	-webkit-transform:rotate(15deg);
+	-moz-transform:rotate(15deg);	
+}
+</style>
+</head>
+
+<body>
+<h1>&lt;video&gt; - API</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>API</dt>
+        <dd>제공되는 API를 통하여 비디오 요소를 제어할수 있다.</dd>
+        <dt>대표적인 Video API<dt>	
+        <dd>
+            <ul>
+            	<li><code>play()</code> :미디어를 재생함</li>
+                <li><code>pause()</code> : 미디어를 일시 정지함</li>
+                <li><code>load()</code> : 미디어를 다시 로드함</li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--HTML부분 --&gt;
+&lt;video id="testVideo" width="300" height="200" controls="true" poster="img/poster.png" src="#" &gt;&lt;/video&gt;
+&lt;div&gt;
+    &lt;img src="img/playerImg.png" alt="비디오컨트롤러" name="videoController" border="0" usemap="#videoControllerMap" id="videoController" /&gt;
+    &lt;map name="videoControllerMap"&gt;
+         &lt;area id="testLink" shape="rect" coords="54,18,97,53" href="source/area88.ogv" alt="Area 88 비디오로 변경" title="Area 88" onclick="changeVideo(this);return false" /&gt;
+         &lt;area shape="rect" coords="15,58,50,99" href="source/tcross2.ogv" alt="Tunder CrossII 비디오로 변경" title="Tunder CrossII" onclick="changeVideo(this);return false" /&gt;
+         &lt;area shape="rect" coords="101,58,135,98" href="source/ddragon2.ogv" alt="Double Dragon II 비디오로 변경" title="Double Dragon II" onclick="changeVideo(this);return false" /&gt;
+         &lt;area shape="rect" coords="53,104,98,138" href="source/ninjakd2.ogv" alt="Nija Kid II 비디오로 변경" title="Nijakid II" onclick="changeVideo(this);return false" /&gt;
+         &lt;area shape="circle" coords="212,92,32" alt="비디오 재생" title="재생" onclick="playVideo()" /&gt;
+         &lt;area shape="circle" coords="292,54,31" alt="비디오 멈춤" title="멈춤" onclick="stopVideo()" /&gt;
+    &lt;/map&gt;
+
+&lt;!--css부분 --&gt;
+&lt;/div&gt;
+&lt;style type="text/css"&gt;
+.play {
+	transform:rotate(15deg);
+	-webkit-transform:rotate(15deg);
+	-moz-transform:rotate(15deg);
+}
+&lt;/style&gt;
+
+/*javascript 부분*/
+var video
+//비디오 변경
+function changeVideo(linkBtn){
+	video=document.getElementById('testVideo');
+	video.src=linkBtn.href;
+	video.load();
+	video.type='video/ogg';
+	playVideo();
+	return false;
+}
+//비디오 재생
+function playVideo(){
+	if(!video){
+		alert("재생할 비디오를 방향키로 선택하세요")	
+	}
+	video.play();
+}
+//비디오 멈춤
+function stopVideo(){
+	if(!video){
+		alert("재생중인 비디오가 없습니다.")	
+	}
+	video.pause();
+}
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+	   <video id="testVideo" width="300" height="200" controls="true" poster="img/poster.png" src="#" ></video>
+       <div>
+       <img src="img/playerImg.png" alt="비디오컨트롤러" name="videoController" border="0" usemap="#videoControllerMap" id="videoController" />
+       <map name="videoControllerMap">
+         <area id="testLink" shape="rect" coords="54,18,97,53" href="source/area88.ogv" alt="Area 88 비디오로 변경" title="Area 88" onclick="changeVideo(this);return false" />
+         <area shape="rect" coords="15,58,50,99" href="source/tcross2.ogv" alt="Tunder CrossII 비디오로 변경" title="Tunder CrossII" onclick="changeVideo(this);return false" />
+         <area shape="rect" coords="101,58,135,98" href="source/ddragon2.ogv" alt="Double Dragon II 비디오로 변경" title="Double Dragon II" onclick="changeVideo(this);return false" />
+         <area shape="rect" coords="53,104,98,138" href="source/ninjakd2.ogv" alt="Nija Kid II 비디오로 변경" title="Nijakid II" onclick="changeVideo(this);return false" />
+         <area shape="circle" coords="212,92,32" alt="비디오 재생" title="재생" onclick="playVideo()" />
+         <area shape="circle" coords="292,54,31" alt="비디오 멈춤" title="멈춤" onclick="stopVideo()" />
+       </map>
+       </div>
+    </div>
+</div>
+<h1>&lt;video&gt; - API</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 선형 그레이디언트</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//선형 그레이디언트의 생성
+function lGradient(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	//그레이디언트의 생성
+	var Grd=ctx.createLinearGradient(0,0,0,150);
+		
+		//색상 변환점에 대한 정보 입력
+		var colorPos01=document.getElementById('colorPos01').value;
+		var colorValue01=document.getElementById('colorValue01').value;
+		var colorPos02=document.getElementById('colorPos02').value;
+		var colorValue02=document.getElementById('colorValue02').value;
+		
+		//색상 변환점 지정
+		Grd.addColorStop(colorPos01,colorValue01);
+		Grd.addColorStop(colorPos02,colorValue02);
+	
+	//fillStyle로 지정하고 사각형 그리기	
+	ctx.fillStyle=Grd;
+	ctx.fillRect(10,10,130,130);
+	
+	
+	//strokeStyle로 지정하고 라인 그리기
+	ctx.strokeStyle=Grd;
+	ctx.lineCap='round';
+	ctx.lineWidth =10
+	
+	ctx.beginPath();
+	ctx.moveTo(160,10);
+	ctx.lineTo(160,140);
+	ctx.stroke();
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 선형 그레이디언트</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>선형 그레이디언트의 생성</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>ctx.createLinearGradient([sX],[sY],[eX],[eY])</code> : 선형 그레이디언트를 선언하고 fillStyle / strokeStyle에 지정하여 적용한다.</dd>
+        <dd><code>{그레이디언트객체}.addColorStop([position],[color])</code> : 색상의 변환점을 지정한다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[sX]</code> : 선형 그레이디언트 시작점의 X좌표</dd>
+        <dd><code>[sY]</code> : 선형 그레이디언트 시작점의 Y좌표</dd>
+        <dd><code>[eX]</code> : 선형 그레이디언트 끝점의 X좌표</dd>
+        <dd><code>[eY]</code> : 선 형그레이디언트 끝점의 Y좌표</dd>
+        <dd><code>[position]</code> : 선형 그레이디언트 상의 색상변환점의 위치를 비율로 지정한다. [0(시작점)~1(끝점)] </dd>
+        <dd><code>[color]</code> : 색상 변환점의 색상을 지정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//선형 그레이디언트의 생성
+function lGradient(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	//그레이디언트의 생성
+	var Grd=ctx.createLinearGradient(0,0,0,150);
+		
+		//색상 변환점에 대한 정보 입력
+		var colorPos01=document.getElementById('colorPos01').value;
+		var colorValue01=document.getElementById('colorValue01').value;
+		var colorPos02=document.getElementById('colorPos02').value;
+		var colorValue02=document.getElementById('colorValue02').value;
+		
+		//색상 변환점 지정
+		Grd.addColorStop(colorPos01,colorValue01);
+		Grd.addColorStop(colorPos02,colorValue02);
+	
+	//fillStyle로 지정하고 사각형 그리기	
+	ctx.fillStyle=Grd;
+	ctx.fillRect(10,10,130,130);
+	
+	
+	//strokeStyle로 지정하고 라인 그리기
+	ctx.strokeStyle=Grd;
+	ctx.lineCap='round';
+	ctx.lineWidth =10
+	
+	ctx.beginPath();
+	ctx.moveTo(160,10);
+	ctx.lineTo(160,140);
+	ctx.stroke();
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="300" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <p><label for="colorPos01">색상 변환 지점01(0 ~ 1) : </label><input id="colorPos01" name="colorPos01" value="0" type="text" />
+            <label for="colorValue01">1지점 색상 : </label><input type="text" value="#f00" name="colorVlaue01" id="colorValue01" /></p>
+            <p><label for="colorPos02">색상 변환 지점02(0 ~ 1) : </label><input id="colorPos02" name="colorPos02" value="1" type="text" />
+            <label for="colorValue02">2지점 색상 : </label><input id="colorValue02" name="colorVlaue02" value="#0f0" type="text" /></p>
+            <button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="submit" onclick="lGradient();">그레이디언트 적용</button>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 선형 그레이디언트</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

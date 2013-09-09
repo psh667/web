@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>display:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub ul{
+	display:table-row;
+}
+#exampleSub li{
+	display:table-cell;
+	width:80px;
+	padding:3px;
+	border:#666 solid 2px;
+	text-align:center;
+}
+#exampleSub td{
+	display:list-item;
+	list-style-type:disc;
+	list-style-position:inside;
+	margin-left:15px;
+}
+</style>
+</head>
+
+<body>
+<h1>display</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>display:[value];</dt>
+        <dd>요소의 표시 방법을 지정함</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #exampleSub ul{
+            display:table-row;
+        }
+        #exampleSub li{
+            display:table-cell;
+            width:80px;
+            padding:3px;
+            border:#666 solid 2px;
+            text-align:center;
+        }
+        #exampleSub td{
+            display:list-item;
+            list-style-type:disc;
+            list-style-position:inside;
+            margin-left:15px;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <h3>리스트를 table처럼 보이기</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <ul>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+        
+        <h3>table을 리스트처럼 보이기</h3>
+        <table>
+            <tr>
+                <td>이것은 테이블 tag 부분입니다.</td>
+                <td>이것은 테이블의 두번째 셀입니다.</td>
+                <td>이처럼 disply를 이용하여 보여지는.</td>
+                <td>형태를 변경할 수 있습니다. </td>
+            </tr>
+        </table>
+     </div>
+</div>
+<h1>display</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

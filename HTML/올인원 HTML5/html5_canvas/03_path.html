@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<title>&lt;canvas&gt; 선그리기</title>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.height=150;
+	 ctx=canvas.getContext("2d");
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+/*선 그리기 */
+function path(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(10,10);
+	ctx.lineTo(60,10);
+	ctx.lineTo(60,60);
+	ctx.stroke();
+}
+/*닫힌 선 그리기 */
+function closePath(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(70,10);
+	ctx.lineTo(120,10);
+	ctx.lineTo(120,60);
+	ctx.closePath();
+	ctx.stroke();
+}
+/*채워진 선 그리기 */
+function fillPath(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(130,10);
+	ctx.lineTo(180,10);
+	ctx.lineTo(180,60);
+	ctx.fill();	
+}
+/*2차곡선 곡선 그리기*/
+function curve2(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(190,10);
+	ctx.quadraticCurveTo(240,10,240,60);
+	ctx.stroke();
+}
+/*베지어 곡선 그리기*/
+function curveB(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(10,100);
+	ctx.bezierCurveTo(10,150,60,100,60,150);
+	ctx.stroke();
+}
+/*호 그리기*/
+function arcTo(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(100,100);
+	ctx.lineTo(150,150)
+	ctx.arcTo(200,100,250,150,50);
+	ctx.stroke();
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 선그리기</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>canvas에서 선을 그릴때 사용되는 기능</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>ctx.beginPath()</code> :새로운 선그리기를 시작한다.</dd>
+        <dd><code>ctx.moveTo([x],[y])</code> : 펜을 지정위치로 이동한다.</dd>
+        <dd><code>lineTo([x],[y])</code> : 지정위치로 선을 생성한다.</dd>
+        <dd><code>quadraticCurveTo([cp1x],[cp1y],[cp2x],[cp2y])</code> : 시작점과 두개의 점으로 지정되는 2차 곡선을 그림</dd>
+        <dd><code>bezierCurveTo([cp1x],[cp1y],[cp2x],[cp2y],[cp3x],[cp3y])</code> : 시작점과 세개의 점으로 지정되는 3차 베지에 곡선을 그림</dd>
+        <dd><code>arcTo([cp1x],[cp1y],[cp2x],[cp2y],[r])</code> : 시작점과 두개의 점을 지나는 두직선에 접하는 반지름이 r인 호를 그린다.</dd>
+        <dd><code>closePath()</code> : 펜의 현재위치에서 시작점으로 도형을 닫는다.</dd>
+        <dd><code>stroke()</code> : 지정된 선을 그린다.</dd>
+        <dd><code>fill()</code> : 지정된 선의 내부를 체운다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[x]</code> : 펜이 이동 또는 작도하는 x좌표</dd>
+        <dd><code>[y]</code> : 펜이 이동 또는 작도하는 y좌표</dd>
+        <dd><code>[cp1x]</code> : 조절점1의 x좌표</dd>
+        <dd><code>[cp1y]</code> : 조절점1의 y좌표</dd>
+        <dd><code>[cp2x]</code> : 조절점2의 x좌표</dd>
+        <dd><code>[cp2y]</code> : 조절점2의의 y좌표</dd>
+        <dd><code>[cp3x]</code> : 조절점3의 x좌표</dd>
+        <dd><code>[cp3y]</code> : 조절점3의 y좌표</dd>
+        <dd><code>[r]</code> : 호의 반지름</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.height=150;
+	 ctx=canvas.getContext("2d");
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+/*선 그리기 */
+function path(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(10,10);
+	ctx.lineTo(60,10);
+	ctx.lineTo(60,60);
+	ctx.stroke();
+}
+/*닫힌 선 그리기 */
+function closePath(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(70,10);
+	ctx.lineTo(120,10);
+	ctx.lineTo(120,60);
+	ctx.closePath();
+	ctx.stroke();
+}
+/*채워진 선 그리기 */
+function fillPath(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(130,10);
+	ctx.lineTo(180,10);
+	ctx.lineTo(180,60);
+	ctx.fill();	
+}
+/*2차곡선 곡선 그리기*/
+function curve2(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(190,10);
+	ctx.quadraticCurveTo(240,10,240,60);
+	ctx.stroke();
+}
+/*베지어 곡선 그리기*/
+function curveB(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(10,100);
+	ctx.bezierCurveTo(10,150,60,100,60,150);
+	ctx.stroke();
+}
+/*호 그리기*/
+function arcTo(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.beginPath();
+	ctx.moveTo(100,100);
+	ctx.lineTo(150,150)
+	ctx.arcTo(200,100,250,150,50);
+	ctx.stroke();
+}
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="300" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            	<a href="noCanvas.html">서버 기능으로 처리하기</a>
+            </div>
+    	</canvas> 
+     	<div id="btnDiv">
+    	<button type="button" onClick="iniCanvas()">초기화</button>
+        <button type="button" onClick="path()">선</button>
+        <button type="button" onClick="closePath()">닫힌 선</button>
+        <button type="button" onClick="fillPath()">채워진 선</button>
+        <button type="button" onClick="curve2()">2차 곡선</button>
+        <button type="button" onClick="curveB()">베지어 곡선</button>
+        <button type="button" onClick="arcTo()">이어진 호</button>
+    	</div>
+     </div>
+</div>
+<h1>&lt;canvas&gt; 선그리기</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

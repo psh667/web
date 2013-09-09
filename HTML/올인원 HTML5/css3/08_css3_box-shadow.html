@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>box-shadow</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub div{
+	margin-bottom:30px;
+	padding:20px;
+}
+#exampleSub h3{font-family:arial;font-weight:bold;text-transform:uppercase;color:#808285;padding-bottom:5px;}
+
+#Box01{
+	box-shadow:10px 10px 5px 5px gray;
+	-webkit-box-shadow:10px 10px 5px 5px gray;
+	-moz-box-shadow:10px 10px 5px 5px gray;;
+}
+#Box02{
+	box-shadow:10px 10px 5px 5px gray inset;
+	-webkit-box-shadow:10px 10px 5px 5px gray inset;
+	-moz-box-shadow:10px 10px 5px 5px gray inset;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : box-shadow</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>box-shadow:[dx] [dy] [bulr] [spread] [set];</dt>
+        <dd>지정된 요소의 그림자를 설정함</dd>
+        <dt>속성 값</dt>
+        <dd><code>dx</code> : 그림자의 가로방향 위치</dd>
+        <dd><code>dy</code> : 그림자의 세로방향 위치</dd>
+        <dd><code>bulr</code> : 흐려짐 정도</dd>
+        <dd><code>spread</code> : 번짐 정도</dd>
+        <dd><code>set</code> : 그림자의 형태
+        	<ul>
+            	<li><code>outset</code> : 요소 바깥쪽으로 그림자가 떨어짐 (기본값)</li>
+                <li><code>inset</code> : 요소 안쪽으로 그림자가 떨어짐</li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+	#Box01{
+        box-shadow:10px 10px 5px 5px gray;
+        -webkit-box-shadow:10px 10px 5px 5px gray;
+        -moz-box-shadow:10px 10px 5px 5px gray;
+	}	
+    #Box02 img{
+		box-shadow:10px 10px 5px 5px gray inset;
+		-webkit-box-shadow:10px 10px 5px 5px gray inset;
+		-moz-box-shadow:10px 10px 5px 5px gray inset;
+	}
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="Box01">
+			<h3 class="exampleDesc">outset</h3>
+		</div>
+
+		<div id="Box02">
+			<h3 class="exampleDesc">inset</h3>
+		</div>
+    </div>
+</div>
+
+<h1>CSS3 : box-shadow</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

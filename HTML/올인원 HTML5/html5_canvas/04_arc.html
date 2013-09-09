@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;canvas&gt; 호그리기</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+function arc(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+		
+	//호 생성정보 값 추출
+	var x=document.getElementById('originX').value;
+	var y=document.getElementById('originY').value;
+	var r=document.getElementById('radius').value;
+	var sA=(Math.PI/180)*document.getElementById('startDeg').value;
+	var eA=(Math.PI/180)*document.getElementById('endDeg').value;
+	var cWaRaio=document.getElementsByName('cwa');
+	for(var i=0;i<cWaRaio.length;i++){
+		if(cWaRaio[i].checked){
+			(cWaRaio[i].value=="true")?cWa=1:cWa=0;	
+		};
+	}
+	
+	//호 그리기
+	ctx.arc(x,y,r,sA,eA,cWa);
+	/* 체움형태로 그리기
+	ctx.fillStyle="#ccF";
+	ctx.fill();
+	*/
+	ctx.stroke();
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 호그리기</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>canvas에서 호를 그릴때 사용되는 기능</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>arc([x],[y],[r],[sA],[eA],[aCw])</code> : 호를 그린다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[x]</code> : Arc의 중심점의 X 좌표</dd>
+        <dd><code>[y]</code> : Arc의 중심점의 y 좌표</dd>
+        <dd><code>[r]</code> : 호의 반지름</dd>
+        <dd><code>[sA]</code> : 시작하는 각도 방위각을 기준으로 하며 Radian값(Math.PI/180)*[degrees]으로 입력</dd>
+        <dd><code>[eA]</code> : 끝나는 각도 방위각을 기준으로 하며 Radian값(Math.PI/180)*[degrees]으로 입력</dd>
+        <dd><code>[eCw : true/fase]</code> : 호의 회전방향을 지정함 [true]일경우 반시계 방향</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width='80%';
+	 canvas.height='500px';
+	 ctx=canvas.getContext("2d");
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+function arc(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+		
+	//호 생성정보 값 추출
+	var x=document.getElementById('originX').value;
+	var y=document.getElementById('originY').value;
+	var r=document.getElementById('radius').value;
+	var sA=(Math.PI/180)*document.getElementById('startDeg').value;
+	var eA=(Math.PI/180)*document.getElementById('endDeg').value;
+	var cWaRaio=document.getElementsByName('cwa');
+	for(var i=0;i&lt;cWaRaio.length;i++){
+		if(cWaRaio[i].checked){
+			(cWaRaio[i].value=="true")?cWa=1:cWa=0;	
+		};
+	}
+	
+	//호 그리기
+	ctx.arc(x,y,r,sA,eA,cWa);
+	ctx.stroke();
+}
+  </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="400" height="200">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <p><label for="originX">원점 X 좌표 : </label><input type="text" id="originX" name="originX" value="200" /> - &lt;canvas&gt;의 좌상단 기준 px</p>
+            <p><label for="originY">원점 Y 좌표 : </label><input type="text" id="originY" name="originY" value="100" /> - &lt;canvas&gt;의 좌상단 기준 px</p>
+            <p><label for="radius">호의 반지름 : </label><input type="text" id="radius" name="radius" value="60" />
+            <label for="startDeg">시작 각도 : </label><input type="text" id="startDeg" name="startDeg" value="0" />
+            <label for="endDeg">끝 각도 : </label><input type="text" id="endDeg" name="endDeg" value="90" /></p>
+            <p><label>회전 방향 : </label>
+                <input type="radio" id="ccw" name="cwa" value="true" checked="checked" /><label for="ccw">반시계 방향</label> / 
+                <input type="radio" id="cw" name="cwa" value="false" /><label for="cw">시계 방향</label></p>
+            
+            <p><button type="button" onClick="iniCanvas()">초기화</button>
+                <button type="button" onclick="arc(); return false">실행</button></p>
+        </div>
+	</div>    
+</div>
+<h1>&lt;canvas&gt; 호그리기</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

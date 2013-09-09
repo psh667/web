@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 원형 그레이디언트</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.wdith=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.wdith,canvas.height);
+}
+//켄버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 브라우저 입니다.");
+		return false;
+	}
+}
+//원형 그레이디언트의 생성
+function rGradient(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	//원형 그레이디언트 영역의 정보 입력 	
+	var sX=document.getElementById('sX').value;
+	var sY=document.getElementById('sY').value;
+	var sR=document.getElementById('sR').value;
+	var eX=document.getElementById('eX').value;
+	var eY=document.getElementById('eY').value;
+	var eR=document.getElementById('eR').value;
+	//그레이디언트 생성
+	var rGrd=ctx.createRadialGradient(sX,sY,sR,eX,eY,eR);
+	
+		//색상 변환점 정보 입력
+		var colorPos01=document.getElementById('colorPos01').value;
+		var colorValue01=document.getElementById('colorValue01').value;
+		var colorPos02=document.getElementById('colorPos02').value;
+		var colorValue02=document.getElementById('colorValue02').value;
+		//입력받은 색상 변환점 지정
+		rGrd.addColorStop(colorPos01,colorValue01);
+		rGrd.addColorStop(colorPos02,colorValue02);
+		//마지막 색상 변환점 지정
+		rGrd.addColorStop(1,'rgba(0,0,0,0)');
+	
+	//fillStyle로 지정
+	ctx.fillStyle=rGrd;
+	ctx.strokeStyle='#000';
+	
+	//원를 그림
+	ctx.beginPath();
+	ctx.arc(50,50,50,0,Math.PI*2,true);
+	ctx.fill();
+}
+//사각형 그리기
+function addRect(){	
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	//사각형을 그림
+	ctx.fillRect(105,10,100,100);
+	//사각형 영역 확인을 위한 외각선을 그림
+	ctx.strokeRect(105,10,100,100);
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 원형 그레이디언트</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>원형 그레이디언트의 생성</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>ctx.createRadialGradient([sX],[sY],[sR],[eX],[eY],[eR])</code> : 원형 그레이디언트를 선언하고 fillStyle / strokeStyle에 지정하여 적용한다.</dd>
+        <dd><code>{그레이디언트객체}.addColorStop([position],[color])</code> : 색상의 변환점을 지정한다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[sX]</code> : 하이라이트 원의 중점 X좌표</dd>
+        <dd><code>[sY]</code> : 하이라이트 원의 중점 Y좌표</dd>
+        <dd><code>[sR]</code> : 하이라이트 원의 반지름</dd>
+        <dd><code>[eX]</code> : 페이드 아웃 원의 중점 X좌표</dd>
+        <dd><code>[eY]</code> : 페이드 아웃 원의 중점 Y좌표</dd>
+        <dd><code>[eR]</code> : 페이드 아웃 원의 반지름</dd>
+        <dd><code>[position]</code> : 선형그레이디언트 상의 색상변환점의 위치를 비율로 지정한다. [0(시작점)~1(끝점)] </dd>
+        <dd><code>[color]</code> : 색상변환점의 색상을 지정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.wdith=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.wdith,canvas.height);
+}
+//켄버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 브라우저 입니다.");
+		return false;
+	}
+}
+//원형 그레이디언트의 생성
+function rGradient(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	//원형 그레이디언트 영역의 정보 입력 	
+	var sX=document.getElementById('sX').value;
+	var sY=document.getElementById('sY').value;
+	var sR=document.getElementById('sR').value;
+	var eX=document.getElementById('eX').value;
+	var eY=document.getElementById('eY').value;
+	var eR=document.getElementById('eR').value;
+	//그레이디언트 생성
+	var rGrd=ctx.createRadialGradient(sX,sY,sR,eX,eY,eR);
+	
+		//색상 변환점 정보 입력
+		var colorPos01=document.getElementById('colorPos01').value;
+		var colorValue01=document.getElementById('colorValue01').value;
+		var colorPos02=document.getElementById('colorPos02').value;
+		var colorValue02=document.getElementById('colorValue02').value;
+		//입력받은 색상 변환점 지정
+		rGrd.addColorStop(colorPos01,colorValue01);
+		rGrd.addColorStop(colorPos02,colorValue02);
+		//마지막 색상 변환점 지정
+		rGrd.addColorStop(1,'rgba(0,0,0,0)');
+	
+	//fillStyle로 지정
+	ctx.fillStyle=rGrd;
+	ctx.strokeStyle='#000';
+	
+	//원를 그림
+	ctx.beginPath();
+	ctx.arc(50,50,50,0,Math.PI*2,true);
+	ctx.fill();
+}
+//사각형 그리기
+function addRect(){	
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	//사각형을 그림
+	ctx.fillRect(105,10,100,100);
+	//사각형 영역 확인을 위한 외각선을 그림
+	ctx.strokeRect(105,10,100,100);
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="300" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <p>
+               <label for="sX">하이라이트원의 X 좌표 : </label><input id="sX" name="sX" value="30" type="text" />
+               <label for="sY">하이라이트원의 Y 좌표 : </label><input id="sY" name="sY" value="30" type="text" />
+               <label for="sR">하이라이트원의 반지름 : </label><input id="sR" name="sR" value="15" type="text" />
+            </p>
+            <p>
+           	 <label for="eX">페이드 아웃 원의 X 좌표 : </label><input id="eX" name="eX" value="50" type="text" />
+             <label for="eY">페이드 아웃 원의 Y 좌표 : </label><input id="eY" name="eY" value="50" type="text" />
+             <label for="eR">페이드 아웃 원의 반지름 : </label><input id="eR" name="eR" value="100" type="text" />
+            </p>
+            <p><label for="colorPos01">색상 변환 지점01(0 ~ 1) : </label><input id="colorPos01" name="colorPos01" value="0" type="text" />
+            	<label for="colorValue01">1지점 색상 : </label><input id="colorValue01" name="colorVlaue01" value="#f00" type="text" /></p>
+            <p><label for="colorPos02">색상 변환 지점02(0 ~ 1) : </label><input id="colorPos02" name="colorPos02" value="1" type="text" />
+            <label for="colorValue02">2지점 색상 : </label><input id="colorValue02" name="colorVlaue02" value="#0f0" type="text" /></p>
+            <button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="submit" onclick="rGradient();">그레이디언트 적용</button>
+            <button type="submit" onclick="addRect();">사각형 그리기</button>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 원형 그레이디언트</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

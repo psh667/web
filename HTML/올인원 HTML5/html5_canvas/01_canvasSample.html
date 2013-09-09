@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;canvas&gt;</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+function drawCanvas(){ 
+	//canvas 영역 선택
+	var canvas=document.getElementById("test"); 
+	
+	//canvasAPI 초기화
+	var ctx=canvas.getContext("2d"); 
+
+	//첫번재 초록색 사각형 
+	ctx.fillStyle="rgb(0,255,0)"; 
+	ctx.fillRect(10,10,100,100); 
+
+	//두번째 반투명 분홍색 사각형 
+	ctx.fillStyle="rgba(255,0,200,0.5)"; 
+	ctx.fillRect(30,30,100,100); 
+
+	//text의 표시 
+	ctx.fillStyle="rgb(0,0,0)"; 
+	ctx.fillText("Hello Canvase!", 120,20); 
+	ctx.fillText("안녕 캔버스!", 150,30);
+} 
+</script>
+<style type="text/css">
+	#fullback{
+		margin:0 auto;
+		padding-top:20px;
+		width:70%;
+		height:80px;
+		border:#999 double 3px;
+		background:#FC0;
+		font-size:18px;
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 요소</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>&lt;canvas&gt; 요소</dt>
+        <dd>동적으로 이미지를 생성할 범위를 지정하는 요소로 이것만으로는 웹상에 이미지를 표시할 수 없다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+function drawCanvas(){ 
+	//canvas 영역 선택
+	var canvas=document.getElementById("test"); 
+	
+	//canvasAPI 초기화
+	var ctx=canvas.getContext("2d"); 
+
+	//첫번재 초록색 사각형 
+	ctx.fillStyle="rgb(0,255,0)"; 
+	ctx.fillRect(10,10,100,100); 
+
+	//두번째 반투명 분홍색 사각형 
+	ctx.fillStyle="rgba(255,0,200,0.5)"; 
+	ctx.fillRect(30,30,100,100); 
+
+	//text의 표시 
+	ctx.fillStyle="rgb(0,0,0)"; 
+	ctx.fillText("Hello Canvase!", 120,20); 
+	ctx.fillText("안녕 캔버스!", 150,30);
+}       
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="300" height="150">
+            <div id="fullback">
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+	            <a href="#">서버 기능으로 처리하기</a>
+            </div>
+    	</canvas> 
+     	<div id="btnDiv">
+    	<button type="button" onClick="drawCanvas()">drawCanvas()</button>
+    	</div>
+     </div>
+</div>
+<h1>&lt;canvas&gt; 요소</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

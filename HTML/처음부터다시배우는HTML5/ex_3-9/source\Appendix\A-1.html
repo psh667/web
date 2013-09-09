@@ -1,0 +1,25 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>비디오 예제</title>
+</head>
+<body>
+<video width="400" height="240" controls autoplay preload="auto">
+    <source src="../Ch05/DSC_2190.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    <source src="../Ch05/DSC_2190.ogv" type='video/ogg; codecs="theora, vorbis"'>
+    <source src="../Ch05/DSC_2190.webm" type='video/webm; codecs="vp8, vorbis"'>
+    <!-- 실버라이트 이용하기 -->
+    <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="400" height="240">
+		<param name="source" value="VideoPlayer.xap"/>
+		<param name="background" value="white" />
+		<param name="initParams" value="m=DSC_2190.mp4" />
+        <param name="minruntimeversion" value="2.0.31005.0" />
+		<a href="http://go.microsoft.com/fwlink/?LinkId=124807" style="text-decoration: none;">
+ 			<img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style: none"/>
+		</a>
+	</object>
+
+</video> 
+</body>
+</html>

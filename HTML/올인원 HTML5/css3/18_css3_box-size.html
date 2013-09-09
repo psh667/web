@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>box-sizing</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+
+#exampleSub h3{font-family:arial;font-weight:bold;color:#808285;padding-bottom:5px;}
+
+#exampleSub>div{
+	margin:0 auto;
+	margin-bottom:15px;
+}
+
+#contentBox{
+	width:60%;
+	padding:20px;
+	border:#096 solid 20px;
+	box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+}
+#borderBox{
+	width:60%;
+	padding:20px;
+	border:#096 solid 20px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+#floatBox{
+	width:60%;
+	padding:0 20px;
+	height:55px;
+	border:#096 solid 20px;
+}
+.bBoxfloat{
+	width:50%;
+	padding:10px;
+	border:#999 solid 10px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	float:left;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : box-size</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>box-sizing</dt>
+        <dd>요소박스 크기를 지정하는 방법</dd>
+        <dt>속성 값</dt>
+        <dd><code>content-box</code> : width와 height는 content만의 크기로 적용됨 (CSS2표준방법)</dd>
+        <dd><code>border-box</code> : width와 height는 padding과 border를 포함한 크기로 적용됨 (기존 IE 모드)</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #contentBox{
+            width:60%;
+            padding:10px;
+            border:#096 solid 20px;
+            box-sizing:content-box;
+            -webkit-box-sizing:content-box;
+            -moz-box-sizing:content-box;
+        }
+        #borderBox{
+            width:60%;
+            padding:20px;
+            border:#096 solid 20px;
+            box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+        }
+        #floatBox{
+            width:60%;
+            padding:0 20px;
+            height:40px;
+            border:#096 solid 20px;
+        }
+        .bBoxfloat{
+            width:50%;
+            padding:10px;
+            border:#999 solid 10px;
+            box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+            -moz-box-sizing:border-box;
+            float:left;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3>content-box</h3>
+        <div id="contentBox"></div>
+        <h3>border-box</h3>
+        <div id="borderBox">
+     	</div>
+        <h3>float에서의 사용</h3>
+     	<div id="floatBox">
+            <div class="bBoxfloat">border-box</div>
+            <div class="bBoxfloat">border-box</div>
+     	</div>
+     </div>
+</div>
+
+<h1>CSS3 : box-sizing</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

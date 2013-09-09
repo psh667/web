@@ -1,0 +1,139 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 이미지삽입</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//이미지를 원하는 크기로 삽입함
+function darawImg(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var img=new Image();
+	img.onload=function(){
+		ctx.drawImage(img,0,0,150,150);
+	}
+	img.src="img/coforwardQr.gif";
+}
+//이미지를 원하는 크기로 삽입함
+function sliceImg(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var img2=new Image();
+	img2.onload=function(){
+		ctx.drawImage(img2,50,140,150,30,0,160,400,70);
+	}
+	img2.src="img/coforwardQr.gif";
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 이미지삽입</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>canvas에서 이미지를 삽입하기</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>img=new Image()</code> : 새로운 이미지 객체를 생성한다.</dd>
+        <dd><code>ctx.drawImage([img],[x],[y],[width],[height])</code> : &lt;canvas&gt;내에 지정된 크기로 설정된 이미지를 삽입한다.</dd>
+        <dd><code>ctx.drawImage([img],[sx],[sy],[sWidth],[sHeight],[x],[y],[width],[height])</code> :원본 이미지의 지정된 부분을 &lt;canvas&gt;내에 지정된 크기로 지정위치에 삽입한다.</dd>
+        <dd><code>clip()</code> :&lt;canvas&gt;영역을 Clipping한다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[img]</code> : 원본 이미지 객체</dd>
+        <dd><code>[sx]</code> : 원본 이미지를 잘라낼 좌상단 X좌표</dd>
+        <dd><code>[sy]</code> : 원본 이미지를 잘라낼 좌상단 Y좌표</dd>
+        <dd><code>[sWidth]</code> : 원본이미지를 잘라낼 폭</dd>
+        <dd><code>[sHeight]</code> : 원본이미지를 잘라낼 높이</dd>
+        <dd><code>[x]</code> : 삽입되는 이미지의 좌측상단 X좌표</dd>
+        <dd><code>[y]</code> : 삽입되는 이미지의 좌측상단 Y좌표</dd>
+        <dd><code>[width]</code> : 삽입되는 이미지의 폭</dd>
+        <dd><code>[height]</code> : 삽입되는 이미지의 높이</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//이미지를 원하는 크기로 삽입함
+function darawImg(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	img=new Image();
+	img.onload=function(){
+		ctx.drawImage(img,0,0,150,150);
+	}
+	img.src="img/coforwardQr.gif";
+}
+//이미지를 원하는 크기로 삽입함
+function sliceImg(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	img=new Image();
+	img.onload=function(){
+		ctx.drawImage(img2,50,140,150,30,0,160,400,70);
+	}
+	img.src="img/coforwardQr.gif";
+}  </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <figure> 
+       <img src="img/coforwardQr.gif" alt="coforward logo" />
+       <figcaption>원본 이미지</figcaption>
+       </figure>
+       <canvas id="test" width="400" height="250">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="submit" onclick="darawImg()">이미지 삽입</button>
+        	<button type="submit" onclick="sliceImg()">이미지의 일부만 삽입</button>
+        </div>
+    	</div>
+     </div>
+</div>
+<h1>&lt;canvas&gt; 이미지삽입</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

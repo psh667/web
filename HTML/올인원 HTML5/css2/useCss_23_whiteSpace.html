@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>white-space:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+
+#exampleSub p{
+	margin:10px;
+	margin-right:50px;
+}
+
+#par01{
+	background:#0FC;
+	white-space:normal;
+}
+#par02{
+	background:#CF6;
+	white-space:pre;
+}
+#par03{
+	background:#F9F;
+	white-space:nowrap;
+}
+</style>
+</head>
+
+<body>
+<h1>white-space</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>white-space:[value];</dt>
+        <dd>공백처리에 대한 설정을 지정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #par01{
+            background:#0FC;
+            white-space:normal;
+        }
+        #par02{
+            background:#CF6;
+            white-space:pre;
+        }
+        #par03{
+            background:#F9F;
+            white-space:nowrap;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">  
+        <p id="par01">
+        CSS는 웹이 어떻게 보여질 것인지를
+        담당하는 웹의 표현을 제어하는 언어입니다.
+        CSS level 3 가 작성 중으로 최근 HTML 5와 함께
+        차세대 웹 표준으로 주목을 받고 있습니다.
+        </p>
+        <p id="par02">
+		CSS는 웹이 어떻게 보여질 것인지를
+        담당하는 웹의 표현을 제어하는 언어입니다.
+        CSS level 3 가 작성 중으로 최근 HTML 5와 함께
+        차세대 웹 표준으로 주목을 받고 있습니다.
+		</p>
+        <p id="par03">
+        CSS는 웹이 어떻게 보여질 것인지를
+        담당하는 웹의 표현을 제어하는 언어입니다.
+        CSS level 3 가 작성 중으로 최근 HTML 5와 함께
+        차세대 웹 표준으로 주목을 받고 있습니다.
+        </p>
+    </div>
+</div>
+<h1>white-space</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

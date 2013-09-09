@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>background-size</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub{
+	width:100%;
+	height:210px;
+	text-align:center;
+}
+#exampleSub div{
+	border:#73A11A solid 2px;
+	width:120px;
+	height:200px;
+	margin:5px;
+	background:url(img/photo3.gif) right bottom no-repeat;
+	float:left;
+}
+#box_rel{
+	background-size:40% 70%;
+	-webkit-background-size:40% 70%;
+	-moz-background-size:40% 70%;
+}
+#box_abs{
+	background-size:50px 50px;
+	-webkit-background-size:50px 50px;
+	-moz-background-size:50px 50px;
+}
+#box_cover{
+	background-size:cover;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+}
+#box_contain{
+	background-size:contain;
+	-webkit-background-size:contain;
+	-moz-background-size:contain;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : background-size</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>background-size : [x], [y];</dt>
+		<dd>백 그라운 이미지의 크기를 지정한다.</dd>
+        <dt>속성 값</dt>
+        <dd><code>[x]% [y]%</code> : 적용되는 요소의 크기에 비례하여 배경 이미지 적용</dd>
+        <dd><code>[x]px [y]px</code> : 절대 크기로 배경 이미지 적용</dd>
+        <dd><code>cover</code> : 배경 이미지를 늘여 적용되는 요소 전체에 표시</dd>
+        <dd><code>contain</code> : 배경 이미지의 가로 세로 비율을 맞춰 요소에 표시할수 있는 최대 크기로 표시</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #box_rel{
+            background-size:40% 70%;
+            -webkit-background-size:40% 70%;
+            -moz-background-size:40% 70%;
+        }
+        #box_abs{
+            background-size:50px 50px;
+            -webkit-background-size:50px 50px;
+            -moz-background-size:50px 50px;
+        }
+        #box_cover{
+            background-size:cover;
+            -webkit-background-size:cover;
+            -moz-background-size:cover;
+        }
+        #box_contain{
+            background-size:contain;
+            -webkit-background-size:contain;
+            -moz-background-size:contain;
+        }
+	&lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="box_org">
+			<span class="exampleDesc">원본 크기</span>
+		</div>
+        <div id="box_rel">
+			<span class="exampleDesc">40% 70%</span>
+		</div>
+         <div id="box_abs">
+			<span class="exampleDesc">50px 50px</span>
+		</div>
+        <div id="box_cover">
+			<span class="exampleDesc">cover</span>
+		</div>
+        <div id="box_contain">
+			<span class="exampleDesc">contain</span>
+		</div>
+    </div>
+</div>
+<h1>CSS3 : background-size</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

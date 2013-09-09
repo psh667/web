@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;video&gt; - &lt;source&gt;</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#fullback{
+		margin:0 auto;
+		background:#0FC;
+		width:70%;
+		padding:10px;
+		text-align:center;
+		font-size:16px;
+		font-weight:bold;
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;video&gt; - &lt;source&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>&lt;sorce&gt;</dt>
+        <dd>&lt;video&gt; 의 자원경로를 지정 함 여러개를 지정할수 있으나 브라우저에서 실행할 수 있는 하나만 재생됨  </dd>
+        <dt>적용되는 속성<dt>	
+        <dd>
+            <ul>
+            	<li><code>src</code> : 비디오 자원의 경로를 지정함  &lt;source&gt; 를 사용할 경우 &lt;video&gt;에 [src]속성은 작성하지 않음 </li>
+                <li><code>type</code> : 비디오 코덱정보의 표시</li>
+                <li><code>media</code> :  미디어 쿼리를 이용하여 전달할 소스를 달리 적용할수 있음</li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;video controls="controls" poster="img/poster.png"&gt;
+    &lt;source src="source/area88.ogv" type="video/ogg" /&gt;
+    &lt;source src="source/tcross2.mp4" type="video/mp4" /&gt;
+    &lt;p>&lt;a href="source/tcross2.mp4"&gt;비디오 파일 다운로드&lt;/a&gt;&lt;/p&gt;
+&lt;/video&gt;  
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub"> 
+       <video controls="controls" poster="img/poster.png">
+       		<source src="video/area88.mp4" type="video/mp4" />
+            <source src="source/area88.ogv" type="video/ogg" />
+            <source src="source/ninjakd2.mp4" type="video/mp4" />
+            
+            <!--<p id="fullback"><a href="source/area88.mp4">비디오 파일 다운로드</a></p>-->
+       </video>
+    </div>
+</div>
+<h1>&lt;video&gt; - &lt;source&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

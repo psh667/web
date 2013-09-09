@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>data-* : 공통속성</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#exampleSub div{
+		margin:0 auto;
+		margin-bottom:15px;
+		padding:10px;
+		border:#CCC solid 5px;
+		text-align:center;
+	}
+	#exampleSub h3{
+		color:#808285;
+		padding-bottom:5px;
+		text-align:left;
+		font-family:arial;
+		font-weight:bold;
+	}
+	#exampleSub button{
+		display:block;
+		width:70%;
+		margin:15px auto;
+	}
+</style>
+<script type="text/javascript">
+	function dataTest(btn){
+		try{
+			var btnData=btn.dataset['test'];
+			alert('[data-*] 속성으로 출력 \n'+btnData);
+		}
+		catch (e){
+			var btnData=btn.getAttribute('data-test');
+			alert('[getArrtibute] 속성으로 출력 \n'+btnData);
+		}
+	}
+</script>
+</head>
+<body>
+<h1>data-*</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+		<dt>data-*</dt>
+    	<dd>사용자정의 데이타의 지정</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--javascript 부분--&gt;
+&lt;script type="text/javascript"&gt;
+	function dataTest(btn){
+		try{
+			var btnData=btn.dataset['test'];
+			alert('[data-*]속성으로 출력 \n'+btnData);
+		}
+		catch (e){
+			var btnData=btn.getAttribute('data-test');
+			alert('[getArrtibute]속성으로 출력 \n'+btnData);
+		}
+	}
+&lt;/script&gt;
+
+&lt;!--HTML 부분--&gt;
+&lt;h2&gt;Example&lt;/h2&gt;
+&lt;div id="exampleSub"&gt;
+    &lt;h3&gt;data-*&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;button type="button" 
+            data-test="사용자 정의 데이타" 
+            onclick="dataTest(this)"&gt;
+            테스트 버튼 1
+        &lt;/button&gt;
+        &lt;button type="button" 
+            HTML 5는 요소에 사용자 정의 임의 속성을 지정하는 [data-*] 속성이 추가되었습니다.
+            onclick="dataTest(this)"&gt;
+            테스트 버튼 2
+       &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3>data-*</h3>
+        <div>
+            <button type="button" data-test="사용자 정의 데이타" onclick="dataTest(this)">
+            	테스트 버튼 1
+            </button>
+            <button type="button" data-test="HTML 5는 요소에 사용자 정의 임의 속성을 지정하는 [data-*] 속성이 추가되었습니다." onclick="dataTest(this)">
+            	테스트 버튼 2
+           </button>
+        </div>
+	</div>
+</div>
+<h1>data-*</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

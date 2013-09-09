@@ -1,0 +1,12 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"> 
+    <context-param>
+        <param-name>DB_NAME</param-name>
+        <param-value>malldb</param-value>
+    </context-param>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>http://hanb.co.kr/brain07/math-functions.tld</taglib-uri>
+            <taglib-location>/WEB-INF/tlds/math-functions.tld</taglib-location>
+        </taglib>
+    </jsp-config>
+</web-app>

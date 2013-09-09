@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>[transform];:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#orgImg{
+		opacity:0.4;
+	}
+</style>
+</head>
+
+<body>
+<h1>[transform]</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>[transform];</dt>
+        <dd>SVG 형태를 변경함</dd>
+        <dt>속성 값</dt>
+        <dd><code>translate([tx],[ty])</code> : 지정된 요소 좌표계를 수평 이동시킴</dd>
+		<dd><code>scale([sx,sy])</code> : 지정된 요소 좌표계의 스케일을 변경함</dd>
+        <dd><code>skewX([d])</code> : 지정된 요소 좌표계를 X축에 대해 기울임</dd>
+        <dd><code>skewY([d])</code> : 지정된 요소 좌표계를 Y축에 대해 기울임</dd>
+        <dd><code>rotate([d])</code> : 지정된 요소의 좌표계를 회전함</dd>
+        <dd><code>matrix([변환매트릭스])</code> : 변환매트릭스를 사용하여 좌표계특성을 변환함</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	#orgImg{
+		opacity:0.4;
+	}
+&lt;/style&gt;
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;image id="orgImg" x="150" y="5" width="204" height="189" 
+        xlink:href="img/coforwardQr2.png" /&gt;
+    &lt;image x="150" y="5" width="204" height="189" 
+        xlink:href="img/coforwardQr2.png"
+        transform="skewX(-30)  rotate(15)" /&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <svg>
+          	<image id="orgImg" x="150" y="5" width="204" height="189" 
+            	xlink:href="img/coforwardQr2.png" />
+            <image x="150" y="5" width="204" height="189" 
+                xlink:href="img/coforwardQr2.png"
+                transform="skewX(-30)  rotate(15)" />
+    	</svg>
+    </div>
+</div>
+<h1>[transform]</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

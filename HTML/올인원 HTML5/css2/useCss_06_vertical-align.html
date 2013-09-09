@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>vertical-align:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub{
+	width:100%;
+	margin:0 auto;
+}
+
+#exampleSub span{
+	background:#0F9;
+	border-bottom:#F00 1px solid;
+	border-top:#F00 1px solid;
+	font-size:12px;
+	padding:0 15px;;
+}
+#exampleSub p{
+	font-size:100px;
+	line-height:normal;
+	border-top:#666 3px dashed;
+	border-bottom:#666 3px dashed;
+}
+.top{
+	vertical-align:top;
+}
+.baseline{
+	vertical-align:baseline;
+}
+.middle{
+	vertical-align:middle;
+}
+.bottom{
+	vertical-align:bottom;
+}
+.sub{
+	vertical-align:sub;
+}
+.super{
+	vertical-align:super;
+}
+
+
+</style>
+</head>
+
+<body>
+<h1>vertical-align</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>vertical-align:[value];</dt>
+        <dd>line box안의 수직위치를 지정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #exampleSub p{
+            font-size:100px;
+            line-height:normal;
+            border-top:#666 3px dashed;
+            border-bottom:#666 3px dashed;
+        }
+        .top{
+            vertical-align:top;
+        }
+        .baseline{
+            vertical-align:baseline;
+        }
+        .middle{
+            vertical-align:middle;
+        }
+        .bottom{
+            vertical-align:bottom;
+        }
+        .sub{
+            vertical-align:sub;
+        }
+        .super{
+            vertical-align:super;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <p>1
+        <span class="super">super</span>
+        <span class="baseline">baseline</span>
+        <span class="sub">sub</span>
+        </p>
+        <p>2
+        <span class="top">top</span>
+        <span class="middle">middle</span>
+        <span class="bottom">bottom</span>
+        </p>
+     </div>
+</div>
+<h1>vertical-align</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

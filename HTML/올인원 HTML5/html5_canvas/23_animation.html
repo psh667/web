@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 애니메이션</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+var aniCnt=0;
+var ani;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+	 if(ani){clearInterval(ani)}
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//애니메이션 시작
+function iniAnimation(){
+	 aniCnt=0;
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}		
+	ani=setInterval(runAnimation,100);
+}
+//애니메이션 키 설정
+function runAnimation(){
+	if(aniCnt<100){
+		drawLine(aniCnt);
+	}
+	if(aniCnt==100){
+		drawImg1();
+	}
+	if(aniCnt==120){
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+	}
+	if(aniCnt>120&&aniCnt<220){
+		drawCir()
+	}
+	if(aniCnt==220){
+		drawImg2();
+	}
+	if(aniCnt==240){
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+		aniCnt=0;
+	}
+	aniCnt++;
+}
+//임의 정보의 생성
+function randomInfo(){
+	var info=new Array();
+	//작성되는 도형 정보의 임의 생성
+	info['x']=Math.floor(Math.random()*400)+1;
+	info['y']=Math.floor(Math.random()*300)+1;
+	info['w']=Math.floor(Math.random()*25)+1;
+	
+	//색상 정보의 임의 생성
+	info['r']=Math.floor(Math.random()*254)+1;
+	info['g']=Math.floor(Math.random()*254)+1;
+	info['b']=Math.floor(Math.random()*254)+1;
+	info['a']=Math.random();
+	return info;
+}
+
+//시작 위치를 변경해며 선그리기
+function drawLine(aniCnt){
+	var info=randomInfo();
+	//선 정보 지정
+	ctx.strokeStyle='rgba('+info['r']+','+info['g']+','+info['b']+','+info['a']+')';
+	ctx.lineWidth=info['w'];
+	ctx.beginPath();
+	//선 시작점 지정
+	switch (aniCnt%4){
+		case 0 :
+			ctx.moveTo(0,0);
+		break;
+		case 1 :
+			ctx.moveTo(0,300);
+		break;
+		case 2 :
+			ctx.moveTo(400,300);
+		break;
+		case 3 :
+			ctx.moveTo(400,0);
+		break;
+	}	
+	ctx.lineTo(info['x'],info['y']);
+	ctx.stroke();
+	return false;
+}
+//로고 이미지 삽입
+function drawImg1(){
+	var img=new Image();
+	img.onload=function(){
+		ctx.drawImage(img,100,60,200,185);
+	}
+	img.src="img/coforwardQr2.png";
+}
+
+//텍스트 로고 이미지 삽입함
+function drawImg2(){
+	var img=new Image();
+	img.onload=function(){
+		ctx.drawImage(img,113,134,174,27);
+	}
+	img.src="img/coforwardText.png";
+}
+//원을 그림
+function drawCir(){
+	var info=randomInfo(); 
+	ctx.fillStyle='rgba('+info['r']+','+info['g']+','+info['b']+','+info['a']+')';
+	ctx.beginPath();
+	ctx.arc(info['x'],info['y'],info['w']*1.5,0,Math.PI*2,true);
+	ctx.fill();
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 애니메이션</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>&lt;canvas&gt;를 이용한 애니메이션의 구현</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd>&lt;canvas&gt;자체는 정적 이미지를 그려내는 기술로 기본적으로 애니메이션을 구현하는 기능을 가지고 있지 않다. &lt;canvas&gt;를 이용한 애니메이션은 javascript의 setInerval또는 setTimeout를 이용하여 구현하며 일반적으로 다음과 같은 순서로 구현한다.
+        <ul>
+            <li>1. &lt;cnavas&gt; 영역을 지움 : <span class="code">clearRect()</span>사용하거나 &lt;canvas&gt;를 재설정함 (width등의 속성을 다시지정하면 기존의 그려진 내용은 지워짐)</li>
+            <li>2. &lt;cnavas&gt; 초기 설정을 저장 </li>
+            <li>3. 애니메이션이될 프래임을 그린다. </li>
+            <li>4. &lt;cnavas&gt; 설정을 다시 불러옴</li>
+            
+            <li>위의 순서를 <span class=":code">setInerval</span>또는 <span class=":code">setTimeout를 사용하여 반복함</span></li>
+        </ul>
+        </dd>
+        <dd>결국 &lt;canvas&gt;를 이용한 애니메이션은 매 프래임을 새로 그려 구현하는 것이다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+var aniCnt=0;
+var ani;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+	 if(ani){clearInterval(ani)}
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//애니메이션 시작
+function iniAnimation(){
+	 aniCnt=0;
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}		
+	ani=setInterval(runAnimation,100);
+}
+//애니메이션 키 설정
+function runAnimation(){
+	if(aniCnt&lt;100){
+		drawLine(aniCnt);
+	}
+	if(aniCnt==100){
+		drawImg1();
+	}
+	if(aniCnt==120){
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+	}
+	if(aniCnt&gt;120&&aniCnt&lt;220){
+		drawCir()
+	}
+	if(aniCnt==220){
+		drawImg2();
+	}
+	if(aniCnt==240){
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+		aniCnt=0;
+	}
+	aniCnt++;
+}
+//임의 정보의 생성
+function randomInfo(){
+	var info=new Array();
+	//작성되는 도형 정보의 임의 생성
+	info['x']=Math.floor(Math.random()*400)+1;
+	info['y']=Math.floor(Math.random()*300)+1;
+	info['w']=Math.floor(Math.random()*25)+1;
+	
+	//색상 정보의 임의 생성
+	info['r']=Math.floor(Math.random()*254)+1;
+	info['g']=Math.floor(Math.random()*254)+1;
+	info['b']=Math.floor(Math.random()*254)+1;
+	info['a']=Math.random();
+	return info;
+
+}
+
+//시작 위치를 변경해며 선그리기
+function drawLine(aniCnt){
+	var info=randomInfo();
+	//선 정보 지정
+	ctx.strokeStyle='rgba('+info['r']+','+info['g']+','+info['b']+','+info['a']+')';
+	ctx.lineWidth=info['w'];
+	ctx.beginPath();
+	//선 시작점 지정
+	switch (aniCnt%4){
+		case 0 :
+			ctx.moveTo(0,0);
+		break;
+		case 1 :
+			ctx.moveTo(0,300);
+		break;
+		case 2 :
+			ctx.moveTo(400,300);
+		break;
+		case 3 :
+			ctx.moveTo(400,0);
+		break;
+	}	
+	ctx.lineTo(info['x'],info['y']);
+	ctx.stroke();
+	return false;
+}
+//로고 이미지 삽입
+function drawImg1(){
+	var img=new Image();
+	img.onload=function(){
+		ctx.drawImage(img,100,60,200,185);
+	}
+	img.src="img/coforwardQr2.png";
+}
+
+//텍스트 로고 이미지 삽입함
+function drawImg2(){
+	var img=new Image();
+	img.onload=function(){
+		ctx.drawImage(img,113,134,174,27);
+	}
+	img.src="img/coforwardText.png";
+}
+
+//원을 그림
+function drawCir(){
+	var info=randomInfo(); 
+	ctx.fillStyle='rgba('+info['r']+','+info['g']+','+info['b']+','+info['a']+')';
+	ctx.beginPath();
+	ctx.arc(info['x'],info['y'],info['w']*1.5,0,Math.PI*2,true);
+	ctx.fill();
+}
+</script>
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <canvas id="test" width="400" height="300">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+        	<button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="button" onclick="iniAnimation();">애니메이션</button>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 애니메이션</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

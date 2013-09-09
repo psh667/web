@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>geolocation : API</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#exampleSub div{
+		margin:0 auto;
+		margin-bottom:15px;
+		padding:20px;
+		border:#CCC solid 5px;
+		text-align:center;
+	}
+	#exampleSub h3{
+		color:#808285;
+		padding-bottom:5px;
+		text-align:left;
+		font-family:arial;
+		font-weight:bold;
+	}
+	#latDate, #lonDate{
+		color:#F00;
+		font-size:16px;
+		font-weight:bold;
+	}
+	#exampleSub button{
+		margin-top:15px;
+	}
+</style>
+<script type="text/javascript">
+function geoData(){
+	if(!navigator.geolocation){
+		alert('geolocation을 지원하지 않습니다.')
+		return false;
+	}
+	navigator.geolocation.getCurrentPosition(function(position){
+		posData=position;
+		document.getElementById('latDate').innerHTML=posData.coords.latitude;
+		document.getElementById('lonDate').innerHTML=posData.coords.longitude;
+	})
+}
+</script>
+</head>
+<body>
+<h1>geolocation</h1>
+<div id="description">
+	<h2>geolocation</h2>
+	<p>위치 정보를 획득하기 위한 <code>window.navigator</code>에 정의된 API</p>
+    <dl>
+    	<dt></dt>
+        <dd></dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;script type="text/javascript"&gt;
+function geoData(){
+	if(!navigator.geolocation){
+		alert('geolocation을 지원하지 않습니다.')
+		return false;
+	}
+	navigator.geolocation.getCurrentPosition(function(position){
+		posData=position;
+		document.getElementById('latDate').innerHTML=posData.coords.latitude;
+		document.getElementById('lonDate').innerHTML=posData.coords.longitude;
+	})
+}
+&lt;/script&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+    	<h3>위치 정보의 획득</h3>
+        <div>
+            <p>위도 : <span id="latDate">--</span></p>
+            <p>경도 : <span id="lonDate">--</span></p>
+            <button type="button" title="testGeoData" onClick="geoData()">위치 정보 얻기</button>
+        </div>
+	</div>
+</div>
+<h1>geolocation</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 픽셀 단위 편집</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+var orgImgData;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//원본 이미지 표시
+function orgImg(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.fillStyle='#ccc';	
+	ctx.fillRect(0,0,150,150);
+	ctx.strokeStyle='#000';	
+	ctx.strokeRect(0,0,150,150);
+	orgImgData=true;
+}
+//이미지 데이터 편집
+function imageData(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	
+	if(!orgImgData){
+		alert("원본이 될 canvas요소를 생성하세요.")
+	}
+	//변환 범위 및 대상 정보 입력
+	var rgba=0;
+	var sX=document.getElementById('sX').value;
+	var sY=document.getElementById('sY').value;
+	var width=document.getElementById('width').value;
+	var height=document.getElementById('height').value;
+	var items=document.getElementsByName('item')
+		for(var i=0;i<items.length;i++){
+			if(items[i].checked){
+				rgba=Number(items[i].value);
+			}
+		}
+	
+	//지정된 영역을 imageData 영역으로 생성함	
+	var iData=ctx.getImageData(sX,sY,width,height);
+	
+	//imageData영역의 Pixel Data별로 변경될 색상값(RGBA)을 반으로 줄임 
+	for(var j=0;j<iData.data.length;j++){
+		if(j%4==rgba){
+			iData.data[j]=Math.floor(iData.data[j]/2);
+		}
+	}
+	//변경된 imageData를 &lt;canvas&gt;에 표시함
+	ctx.clearRect(160,0,200,200);
+	ctx.putImageData(iData,160,0);
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 픽셀 단위 편집</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>비트맵 이미지의 픽셀 단위 편집</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>createImageData([iWidth],[iHeight])</code> : ImageData를 생성한다.</dd>
+        <dd><code>createImageData([ImageData])</code> : ImageData로 부터 그와 동일한 ImageData를 생성한다.</dd>
+        <dd><code>getImageData([sX],[sY],[width],[height])</code> : &lt;canvase&gt;에 그려진 형태로 부터 ImageData를 생성한다.</dd>
+        <dd><code>putImageData([ImageData],[sX],[sY],[iX],[iY],[iWidth],[iHeight])</code> :ImageData의 지정된 영역을 &lt;canvas&gt;에 지정된 위치에 표시한다.</dd>
+        <dt>매개변수</dt>
+        <dd><code>[ImageData]</code> : 픽셀 단위로 컨트롤 할수 있는 이미지 영역 개체로 각픽셀은 RGBA의 데이타 값으로 구성됨</dd>
+        <dd><code>[iWidth]</code> : ImageData의 가로 크기</dd>
+        <dd><code>[iHeight]</code> : ImageData의 세로 크기</dd>
+        <dd><code>[iX]</code> : ImageData 영역의 X 좌표</dd>
+        <dd><code>[iY]</code> : ImageData 영역의 Y 좌표</dd>
+        <dd><code>[width]</code> :  &lt;canvase&gt;에서 가져올 가로 크기</dd>
+        <dd><code>[height]</code> :  &lt;canvase&gt;에서 가져올 세로 크기</dd>
+        <dd><code>[sX]</code> :  &lt;canvase&gt; 영역의 X 좌표</dd>
+        <dd><code>[sY]</code> :  &lt;canvase&gt; 영역의 Y 좌표</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+var orgImgData;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//원본 이미지 표시
+function orgImg(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.fillStyle='#ccc';	
+	ctx.fillRect(0,0,150,150);
+	ctx.strokeStyle='#000';	
+	ctx.strokeRect(0,0,150,150);
+	orgImgData=true;
+}
+//이미지 데이터 편집
+function imageData(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	
+	if(!orgImgData){
+		alert("원본이 될 canvas요소를 생성하세요.")
+	}
+	//변환 범위 및 대상 정보 입력
+	var rgba=0;
+	var sX=document.getElementById('sX').value;
+	var sY=document.getElementById('sY').value;
+	var width=document.getElementById('width').value;
+	var height=document.getElementById('height').value;
+	var items=document.getElementsByName('item')
+		for(var i=0;i&lt;items.length;i++){
+			if(items[i].checked){
+				rgba=Number(items[i].value);
+			}
+		}
+	
+	//지정된 영역을 imageData 영역으로 생성함	
+	var iData=ctx.getImageData(sX,sY,width,height);
+	
+	//imageData 영역의 Pexel Data별로 변경될 색상값(RGBA)을 반으로 줄임 
+	for(var j=0;j&lt;iData.data.length;j++){
+		if(j%4==rgba){
+			iData.data[j]=Math.floor(iData.data[j]/2);
+		}
+	}
+	//변경된 imageData를 &lt;canvas&gt;에 표시함
+	ctx.clearRect(160,0,200,200);
+	ctx.putImageData(iData,160,0);
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <canvas id="test" width="400" height="300">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+        	<p><button type="button" onClick="iniCanvas()">초기화</button>
+            	<button type="button" onClick="orgImg()">원본 이미지 삽입</button></p>
+            <p><label for="sX">ImageData로 가져올 Canvas 영역의 X 좌표의 시점</label><input type="text" value="0" name="sX" id="sX"></p>
+            <p><label for="width">ImageData로 가져올 Canvas 영역의 넓이</label><input type="text" value="150" name="width" id="width"></p>
+            <p><label for="sY">ImageData로 가져올 Canvas 영역의 Y 좌표의 시점</label><input type="text" value="0" name="sY" id="sY"></p>
+            <p><label for="height">ImageData로 가져올 Canvas 영역의 넓이</label><input type="text" value="50" name="height" id="height"></p>
+            <p>감소 색상 속성 :
+        		<input type="radio" value="0" id="itemR" name="item"><label for="itemR">R(적색)</label>
+          		<input type="radio" value="1" id="itemG" name="item"><label for="itemG">G(녹색)</label>
+          		<input type="radio" value="2" id="itemB" name="item"><label for="itemB">B(파란색)</label>
+          		<input type="radio" checked="checked" value="3" id="itemA" name="item"><label for="itemA">A(투명도)</label>
+        		<button type="button" onClick="imageData()">변경 적용</button>
+            </p>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 픽셀 단위 편집</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

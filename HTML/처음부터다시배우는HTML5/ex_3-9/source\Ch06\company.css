@@ -1,0 +1,11 @@
+
+@import url("main.css");
+
+body {
+	background-color: #FF6;
+}
+
+.firsthead {
+	text-decoration: underline;
+	color: #F00;
+}

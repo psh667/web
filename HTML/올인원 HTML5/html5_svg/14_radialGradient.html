@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;radialGradient&gt;:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#rect01{
+		stroke:#CCC;
+		stroke-width:5;
+		fill:url(#rGradientSample01);
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;radialGradient&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>&lt;radialGradient cx="[cx]" cy="[cy]" fx="[fx]" fy="[fy]" r="[r]" spreadMethod="[체움방식]"gradientTransform="[변형방식]" /&gt;</dt>
+        <dd>선형그라디언트를 생성함</dd>
+        <dt>속성 값</dt>
+        <dd><code>cx</code> : 원형 그라디언트 중점의 X축 비율</dd>
+		<dd><code>cy</code> : 원형 그라디언트 중점의 Y축 비율</dd>
+        <dd><code>fx</code> : 원형 그라디언트 초점의 X축 비율</dd>
+		<dd><code>fy</code> : 원형 그라디언트 초점의 Y축 비율</dd>
+        <dd><code>r</code> : 원형 그라디언트 반지름 비율</dd>
+        <dd><code>체움방식</code> : 그라디언트의 체움방식을 지정함 pad, repeat, reflect</dd>
+        <dd><code>변형방식</code> : [transform]속성과 동일한 방법으로 그라디언트를 변형함</dd>
+        <dt>&lt;stop offset="[offset]" stop-color="[color]" stop-opacity="[f]" /&gt;</dt>
+		<dd>색상변환점을 설정함</dd>
+        <dt>속성 값</dt>
+        <dd><code>offset</code> : 그라디언트 내에서 색상 변환점 위치의 거리비율</dd>
+		<dd><code>color</code> : 색상 변환점의 변환 색상</dd>
+        <dd><code>f</code> : 변환점의 투명도</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	#rect01{
+		stroke:#CCC;
+		stroke-width:5;
+		fill:url(#rGradientSample01);
+	}
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;defs&gt;
+        &lt;radialGradient id="rGradientSample01"
+            cx="50%" cy="50%"
+            fx="40%" fy="40%" r="30%"
+            spreadMethod="reflect"&gt;
+            &lt;stop offset="0%"   stop-color="#F00" stop-opacity="1"/&gt;
+            &lt;stop offset="50%"   stop-color="#0F0" stop-opacity="0.7"/&gt;
+            &lt;stop offset="100%" stop-color="#00F" stop-opacity="0.5" /&gt;
+        &lt;/radialGradient&gt;
+    &lt;/defs&gt;  
+    &lt;rect id="rect01" x="40" y="20" width="320" height="150" rx="10" ry="10" /&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+        <div id="exampleSub">
+         <svg>
+         <defs>
+            <radialGradient id="rGradientSample01"
+               cx="50%" cy="50%"
+               fx="40%" fy="40%" r="30%"
+               spreadMethod="reflect">
+              <stop offset="0%"   stop-color="#F00" stop-opacity="1"/>
+              <stop offset="50%"   stop-color="#0F0" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#00F" stop-opacity="0.5" />
+            </radialGradient>
+        </defs>  
+        <rect id="rect01" x="40" y="20" width="320" height="150" rx="10" ry="10" />
+        </svg>
+    </div>
+</div>
+<h1>&lt;radialGradient&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

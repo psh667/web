@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>그라데이션 효과</title>
+<style type="text/css">
+.box1 {
+	width:500px;
+	height:300px;
+	padding:30px;
+	border:1px solid #06C;
+	background-image: -webkit-gradient(
+		linear,
+		left top,		
+		left bottom,
+		color-stop(0.01, rgb(76,180,253)),
+		color-stop(0.77, rgb(3,32,252))
+	);
+	background-image: -moz-linear-gradient(
+		center top ,
+		rgb(76,180,253) ,		
+		rgb(3,32,252)
+	);
+	Filter: progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#4cb4fd, endColorstr=#0320fc); 
+	font-family: "맑은 고딕";
+	font-size: 24px;
+	color: #FFF;
+}
+	
+
+
+</style>
+</head>
+
+<body>
+<div class="box1">
+
+Gradient 테스트 입니다.
+</div>
+
+
+</body>
+</html>

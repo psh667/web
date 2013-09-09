@@ -1,0 +1,20 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>비디오 예제</title>
+</head>
+<body>
+<video width="400" height="240" controls autoplay preload="auto">
+    <source src="../Ch05/DSC_2190.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+    <source src="../Ch05/DSC_2190.ogv" type='video/ogg; codecs="theora, vorbis"'>
+    <source src="../Ch05/DSC_2190.webm" type='video/webm; codecs="vp8, vorbis"'>
+    <!-- flow plyaer 이용하기 -->
+    <object width="400" height="240" type="application/x-shockwave-flash" data="flowplayer-3.2.7.swf">
+        <param name="movie" value="flowplayer-3.2.7.swf" />
+        <param name="allowfullscreen" value="true" />
+        <param name="flashvars" value='config={"clip": {"url": "http://css3.zerois.net/images/DSC_2190.mp4","autoPlay":false, "autoBuffering":true}}' />
+    </object>
+</video> 
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;text&gt;:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#coForward{
+		fill:#0099D8;
+		font-size:40px;
+		font-style:normal;
+		font-weight:bold;
+		font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+	}
+	#coForward tspan{
+		fill:#0850A0;;	
+		font-variant:small-caps;
+	}
+	#nscreen{
+		font-size:25px;
+		font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		fill:transparent;
+		stroke:#096;
+		stroke-width:2;
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;text&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>&lt;text x="[x]" y="[y]"&gt;[문자열]&lt;/text&gt;</dt>
+        <dd>문자의 작성</dd>
+        <dt>속성</dt>
+        <dd><code>x</code> : 문자열 위치의 X좌표 </dd>
+        <dd><code>y</code> : 문자열 위치의 Y좌표</dd>
+        <dt>&lt;tspan dx["dx"] dy="[dy]"&gt;[문자열]&lt;/tspan&gt;</dt>
+        <dd>문자열 그룹의 작성</dd>
+        <dt>속성</dt>
+        <dd><code>x</code> : 문자열 위치의 X좌표 </dd>
+        <dd><code>y</code> : 문자열 위치의 Y좌표</dd>
+        <dd><code>dx</code> : 원래 문자열 위치에서 변경할 X좌표 거리</dd>
+        <dd><code>dy</code> : 원래 문자열 위치에서 변경할 Y좌표 거리</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	#coForward{
+		fill:#0099D8;
+		font-size:40px;
+		font-style:normal;
+		font-weight:bold;
+		font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+	}
+	#coForward tspan{
+		fill:#0850A0;;	
+		font-variant:small-caps;
+	}
+	#nscreen{
+		font-size:25px;
+		font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		fill:transparent;
+		stroke:#096;
+		stroke-width:2;
+	}
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;text id="textSample" x="60" y="100"&gt;
+        &lt;tspan id="coForward"&gt;co&lt;tspan&gt;Forward&lt;/tspan&gt;&lt;/tspan&gt;
+        &lt;tspan id="nscreen" dx="-150" dy="25"&gt;Web on The N Screen&lt;/tspan&gt;
+    &lt;/text&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <svg>
+       		<text id="textSample" x="60" y="100">
+          		<tspan id="coForward">co<tspan>Forward</tspan></tspan>
+                <tspan id="nscreen" dx="-150" dy="25">Web on The N Screen</tspan>
+            </text>
+       </svg>
+    </div>
+</div>
+<h1>&lt;text&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

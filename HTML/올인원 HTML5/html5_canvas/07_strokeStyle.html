@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 선 색상</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//색상값을 입력받아 선을 그림
+function strokeStyle(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var color=document.getElementById("colorCode").value
+	ctx.strokeStyle=color;
+	ctx.beginPath();
+	ctx.moveTo(0,0);
+	ctx.lineTo(300,150);
+	ctx.stroke();
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 선 색상</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>선 색상의 지정</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>strokeStyle=[color]</code> : 선 색상을 지정한다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[color]</code> : 색상을 지정한다. 지정하는 형식은 CSS의 색상지정과 동일하다. 
+        	<ul>
+                <li><strong>색상이름</strong> : 예약된 색상이름으로 지정한다. Ex: <span class="code">"red"</span></li>
+                <li><strong>색상코드</strong> : 색상코드값으로 지정한다. Ex: "#ff0000" 또는 <span class="code">"#f00"</span></li>
+                <li><strong>RGB형식</strong> : 0~255까지의 RGB 값으로 지정한다. Ex: <span class="code">"rgb(255,0,0)"</span></li>
+                <li><strong>RGBA형식</strong> : RGB형식에 alpha값을 추가로 지정한다. alpha값의 범위는 0~1 사이값을 갖는다.  Ex:<span class="code">"rgb(255,0,0,1)"</span></li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//색상값을 입력받아 선을 그림
+function strokeStyle(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var color=document.getElementById("colorCode").value
+	ctx.strokeStyle=color;
+	ctx.beginPath();
+	ctx.moveTo(0,0);
+	ctx.lineTo(300,150);
+	ctx.stroke();
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="150" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <button type="button" onClick="iniCanvas()">초기화</button>
+            <input type="text" value="#F00" name="colorCode" id="colorCode">
+            <button type="submit" onclick="strokeStyle()">선 색상 지정</button>
+        </div>
+     </div>
+</div>
+<h1>&lt;canvas&gt; 선 색상</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

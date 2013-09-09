@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>z-index:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+
+#exampleSub{
+	position:relative;
+	width:90%;
+	height:260px;
+	margin:0 auto;
+	
+}
+#exampleSub div{
+	height:50px;
+	width:120px;
+	border:#000 double 3px;
+	position:absolute;
+	padding-left:50px;
+	padding-top:70px;
+	font-weight:bold;
+}
+
+
+#zIndex02{
+	background-color:#cfc;
+	z-index:2;
+}
+#zIndex01{
+	background-color:#ccf;
+	top:80px;
+	left:80px;
+	z-index:1;
+}
+#zIndex00{
+	background-color:#fcc;
+	top:150px;
+	left:150px;
+	z-index:0;
+}
+#zIndex100{
+	width:80px;
+	position:absolute;
+	top:5px;
+	right:5px;
+	color:#F00;
+	background:#0FF;
+	z-index:100;
+}
+</style>
+</head>
+
+<body>
+<h1>z-index</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>z-index:[integer];</dt>
+        <dd>요소의 겹침 순서를 지정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #zIndex02{
+            background-color:#cfc;
+            z-index:2;
+        }
+        #zIndex01{
+            background-color:#ccf;
+            top:80px;
+            left:80px;
+            z-index:1;
+        }
+        #zIndex00{
+            background-color:#fcc;
+            top:150px;
+            left:150px;
+            z-index:0;
+        }
+        #zIndex100{
+            width:80px;
+            position:absolute;
+            top:5px;
+            right:5px;
+            color:#F00;
+            background:#0FF;
+            z-index:100;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">  
+        <div id="zIndex02">
+        	<p>[div-p]element zIndex="2"</p>
+        </div>
+        <div id="zIndex01">
+        	<p>[div-p]element zIndex="1"</p>
+        </div>
+        <div id="zIndex00">
+        	<p>[div-p]element zIndex="0"</p>
+            <p id="zIndex100">zIndex="100" zIndex="100" zIndex="100" zIndex="100"</p>
+        </div>   
+    </div>
+</div>
+<h1>z-index</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

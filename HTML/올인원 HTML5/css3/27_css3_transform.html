@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>transform</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+
+#exampleSub h3{font-family:arial;font-weight:bold;text-transform:uppercase;color:#808285;padding-bottom:5px; z-index:10;}
+
+.sampleBox{
+	width:40%;
+	height:120px;
+	margin:0 5% 5% 15px;
+	float:left;
+	border:#CCC solid 2px;
+	position:relative;
+}
+
+.sampleBox div{
+	overflow:hidden;
+	background:#9C0;
+}
+#transform_translate img{
+	transform:translate(50px, 30px);
+	-webkit-transform:translate(50px, 30px);
+	-moz-transform:translate(50px, 30px);
+	-o-transform:translate(50px, 30px);
+}
+#transform_scale img{
+	transform:scale(2);
+	-webkit-transform:scale(2);
+	-moz-transform:scale(2);
+	-o-transform:scale(2);
+}
+#transform_rotate img{
+	transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	-moz-transform:rotate(45deg);
+	-o-transform:rotate(45deg);
+}
+#transform_skew img{
+	transform:skew(30deg, 30deg);
+	-webkit-transform:skew(30deg, 30deg);
+	-moz-transform:skew(30deg, 30deg);
+	-o-transform:skew(30deg, 30deg);
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : transform</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>transform</dt>
+        <dd>요소의 형태를 변경함</dd>
+        <dt>속성 값</dt>
+        <dd><code>translate([dx],[dy])</code> : 지정한 크기 만큼 이동 시킴</dd>
+        <dd><code>scale([ds])</code> : 지정한 배율 만큼 확대함</dd>
+        <dd><code>rotate([deg])</code> : 지정한 각도만큼 회전 시킴</dd>
+        <dd><code>skew([degx],[degy])</code> : 지정한 경사로 기울림</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #transform_translate img{
+            transform:translate(50px, 30px);
+            -webkit-transform:translate(50px, 30px);
+            -moz-transform:translate(50px, 30px);
+            -o-transform:translate(50px, 30px);
+        }
+        #transform_scale img{
+            transform:scale(2);
+            -webkit-transform:scale(2);
+            -moz-transform:scale(2);
+            -o-transform:scale(2);
+        }
+        #transform_rotate img{
+            transform:rotate(45deg);
+            -webkit-transform:rotate(45deg);
+            -moz-transform:rotate(45deg);
+            -o-transform:rotate(45deg);
+        }
+        #transform_skew img{
+            transform:skew(30deg, 30deg);
+            -webkit-transform:skew(30deg, 30deg);
+            -moz-transform:skew(30deg, 30deg);
+            -o-transform:skew(30deg, 30deg);
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div class="sampleBox">	
+        	<h3>translate</h3>
+            <div id="transform_translate">
+            	<img src="img/coforwardQr2.png" width="100" alt="coforward" />
+			</div>
+        </div>
+		<div class="sampleBox">	
+            <h3>scale</h3>
+            <div id="transform_scale">
+            	<img src="img/coforwardQr2.png" width="100" alt="coforward" />
+			</div>
+        </div>
+        <div class="sampleBox">
+			<h3>rotate</h3>
+            <div id="transform_rotate">
+            	<img src="img/coforwardQr2.png" width="100" alt="coforward" />
+			</div>
+        </div>
+        <div class="sampleBox">
+			<h3>skew</h3>
+        	<div id="transform_skew"> 
+            	<img src="img/coforwardQr2.png" width="100" alt="coforward" />
+			</div>
+       	</div>
+     </div>
+</div>
+
+<h1>CSS3 : transform</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

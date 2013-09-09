@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>list-style:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+
+#styleDemical{
+	list-style:decimal;
+	list-style-position:inside;
+}
+
+#styleImage{
+	list-style:url(img/check.png) inside upper-alpha;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+<h1>list-style</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>list-style:[value] [value] [value];</dt>
+        <dd>리스트에 전용 설정을 일괄 지정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #styleDemical{
+            list-style:decimal;
+            list-style-position:inside;
+        }
+        
+        #styleImage{
+            list-style:url(img/check.png) inside upper-alpha;
+        } 
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">  
+        <ol>
+        	<li>[ol-li] element +|+ [ol-li] element +|+ [ol-li] element +|+ [ol-li] element +|+ [ol-li] element +|+ [ol-li] element +|+ </li>
+            <li>[ol-li] element</li>
+        </ol>
+        <ul id="styleDemical">
+        	<li>[ul-li] element id="styleDemical" +|+ [ul-li] element id="styleDemical" +|+ [ul-li] element id="styleDemical" +|+ [ul-li] element id="styleDemical"</li>
+            <li>[ul-li] element id="styleDemical"</li>
+        </ul>
+         <ul id="styleImage">
+        	<li>[ul-li] element id="styleImage"</li>
+            <li>[ul-li] element id="styleImage"</li>
+        </ul>
+    </div>
+</div>
+<h1>list-style</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

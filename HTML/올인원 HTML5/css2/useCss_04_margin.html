@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>margin:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#outBox{
+	width:400px;
+	border:#f00 solid 5px;
+	background:#CCC;
+}
+
+#inBox01{
+	background:#0F9;
+	margin-bottom:20px;
+	margin-top:10px;
+	margin-left:50px;
+}
+
+#inBox02{
+	background:#FF3;
+	margin-bottom:10px;
+	margin-top:50px;
+	margin-right:50px;
+}
+</style>
+</head>
+
+<body>
+<h1>margin</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>margin:[length];</dt>
+        <dd>다른 요소와의 여백</dd>
+		<dd>길이단위의 값 (-값도 가능)</dd>
+		<dd>margin-top / margin-right / margin-bottom/ margin-left으로 개별 지정 가능</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #outBox{
+            width:400px;
+            border:#f00 solid 5px;
+            background:#CCC;
+        }
+        
+        #inBox01{
+            background:#0F9;
+            margin-bottom:20px;
+            margin-top:10px;
+            margin-left:50px;
+        }
+        
+        #inBox02{
+            background:#FF3;
+            margin-bottom:10px;
+            margin-top:50px;
+            margin-right:50px;
+        }
+	&lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="outBox">
+        <div id="inBox01">
+            <p>
+            	inBox01<br />
+            	inBox01<br />
+                inBox01<br />
+                inBox01<br />
+                inBox01
+            </p>
+        </div>
+        <div id="inBox02">
+            <p>
+            	inBox02<br />
+            	inBox01<br />
+                inBox01<br />
+                inBox01<br />
+                inBox01
+            </p>
+        </div>
+    </div>
+     </div>
+</div>
+
+<h1>margin</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

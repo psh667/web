@@ -1,0 +1,155 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 선 끝모양</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//선 끝 모양 종류별 라인 작성
+function lineCap(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}		
+	
+	//선 끝 모양 예약어의 배열지정
+	var capType=['butt','round','square'];
+	
+	//기준선의 작성
+	ctx.strokeStyle='#09f';
+	ctx.beginPath();
+	ctx.moveTo(20,10);
+	ctx.lineTo(20,140);
+	ctx.moveTo(150,10);
+	ctx.lineTo(150,140);
+	ctx.stroke()
+
+	//선 끝 모양의 적용라인 작성 
+	ctx.strokeStyle='black';
+	for(var i=0;i<capType.length;i++){
+		ctx.lineWidth=15;
+		ctx.lineCap=capType[i];
+		ctx.beginPath();
+		ctx.moveTo(20,25+i*50);
+		ctx.lineTo(150,25+i*50);
+		ctx.stroke();
+		
+		//선 끝 모양의 이름표시
+		ctx.fillStyle="#f00";
+		ctx.font='20px';
+		ctx.fillText(capType[i],170,25+i*50);
+	}
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 선 끝 모양</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>선 끝 모양의 지정</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>lineCap=[CapType]</code> : stroke()의 선 끝 모양을 지정한다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[CapType]</code> : 선 끝 모양으로 형식은 다음과 같다.
+        	<ul>
+                <li><code>butt</code>: 끝 점에서에 수평인 형태 [기본값].</li>
+                <li><code>round</code>: 끝 점이 둥근 형태</li>
+                <li><code>square</code>: 끝 점이 사각 형태</li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//선 끝 모양 종류별 라인 작성
+function lineCap(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}		
+	
+	//선 끝 모양 예약어의 배열지정
+	var capType=['butt','round','square'];
+	
+	//기준선의 작성
+	ctx.strokeStyle='#09f';
+	ctx.beginPath();
+	ctx.moveTo(20,10);
+	ctx.lineTo(20,140);
+	ctx.moveTo(150,10);
+	ctx.lineTo(150,140);
+	ctx.stroke()
+
+	//선 끝 모양의 적용라인 작성 
+	ctx.strokeStyle='black';
+	for(var i=0;i&lt;capType.length;i++){
+		ctx.lineWidth=15;
+		ctx.lineCap=capType[i];
+		ctx.beginPath();
+		ctx.moveTo(20,25+i*50);
+		ctx.lineTo(150,25+i*50);
+		ctx.stroke();
+		
+		//선 끝 모양의 이름표시
+		ctx.fillStyle="#f00";
+		ctx.font='20px';
+		ctx.fillText(capType[i],170,25+i*50);
+	}
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="300" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="submit" onclick=" lineCap();">선 끝 모양</button>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 선 끝 모양</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

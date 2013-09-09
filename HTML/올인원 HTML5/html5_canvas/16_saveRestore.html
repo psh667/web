@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 상태 저장과 불러오기</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+var save_cnt, restore_cnt
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+	 save_cnt=0;
+	 restore_cnt=0
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//지정된 색상으로 사각형을 그리고 fillStyle을 저장
+function saveState(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	if(save_cnt==null){
+		save_cnt=0;
+	}
+	ctx.fillStyle=document.getElementById('fillStyle').value
+	ctx.fillRect(50*save_cnt,10,30,30)
+	save_cnt++
+	ctx.save();
+}
+
+//저장된 상태를 불러와 저장된 fillStyle로 사각형을 그림
+function restoreState(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	if(restore_cnt==null){
+		restore_cnt=0;
+	}
+	ctx.restore();
+	ctx.fillRect(50*restore_cnt,60,30,30);
+	restore_cnt++;
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 상태 저장과 불러오기</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>상태 저장과 불러오기</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>save()</code> : <canvase>의 각 설정을 저장한다. 여러 단계을 저장 할 수 있다.</dd>
+        <dd><code>restore()</code> : save()로 저장한 단계를 호출한다 여러 단계로 저장됐을 경우 바로 전 단계 것 을 호출한다.</dd>
+    	<dt>매개변수</dt>
+        <dd>저장 되는 대상은 그려진 대상이 아니라 다음과 같은 &lt;canvas&gt;의 각정 설정값임         	
+            <ul>
+                <li>좌표계의 확대 축소 정보 : <code>scale()</code></li>
+                <li>좌표계의 회전 정보 : <code>rotate()</code></li>
+                <li>좌표계의 평면 이동 정보 : <code>translate()</code></li>
+                <li>클립핑 영역 : <code>clip()</code></li>
+                <li>선 특성 : <code>strokeStyle</code> / <code>lineCap</code> / <code>lineJoin</code> /<code>miterLimit</code> </li>
+                <li>체움 색상 : <code>fillStyle</code></li>
+                <li>투명도 : <code>globalAlpha</code></li>
+                <li>그림자 속성  : <code>shadowOffsetX</code> / <code>shadowOffsetY</code> / <code>shadowBlur</code> / <code>shadowColor</code></li>
+                <li>도형 겹침 특성 : <code>globalCompositeOperation</code></li>
+                <li>문자열 특성 : <code>font</code> / <code>textAlign</code> / <code>textBaseline</code></li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+var save_cnt, restore_cnt, ctx
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+     save_cnt=0;
+	 restore_cnt=0
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//지정된 색상으로 사각형을 그리고 fillStyle을 저장
+function saveState(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	if(save_cnt==null){
+		save_cnt=0;
+	}
+	ctx.fillStyle=document.getElementById('fillStyle').value
+	ctx.fillRect(50*save_cnt,10,30,30)
+	save_cnt++
+	ctx.save();
+}
+
+//저장된 상태를 불러와 저장된 fillStyle로 사각형을 그림
+function restoreState(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	
+	if(restore_cnt==null){
+		restore_cnt=0;
+	}
+	ctx.restore();
+	ctx.fillRect(50*restore_cnt,60,30,30);
+	restore_cnt++;
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="300" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <button type="button" onClick="iniCanvas()">초기화</button>
+            <label for="fillStyle">체움 색상 : </label><input id="fillStyle" name="fillStyle" value="#f00" type="text"><button type="button" onclick="saveState();">면 색상 저장</button>
+            <button type="submit" onclick="restoreState();">불러오기</button>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 상태 저장과 불러오기</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

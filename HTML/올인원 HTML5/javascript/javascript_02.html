@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" language="javascript">
+/**********************************************
+javascript를 Style의 변경
+***********************************************/
+
+function colorRed(){
+	//id가 "discript"인 Div를 선택
+	var discription=document.getElementById('description');
+	//discript자식요소인 <strong>선택함
+	var targetElement=discription.getElementsByTagName('strong')[0];
+	//선택된 요소의 style을 변경
+	targetElement.style.color='#f00'; 
+}//colorRed()
+
+
+function colorBlue(){
+	//HTML문서내에서 <li>들을 선택함 요소를 선택함
+	var listItem=document.getElementsByTagName('li');
+	//선택된 li의 수만큼 순회함
+	for(var i=0;i<listItem.length;i++){
+		//listItem의 텍스트 요소를 선택
+		var itemText=listItem[i].firstChild.nodeValue
+		//텍스트 요소가 스마트 폰일때만 실행
+		if(itemText=='스마트 폰'){
+			//색상과 글자 크기를 변경함
+			listItem[i].style.color='#00f'
+			listItem[i].style.fontSize="30px";
+		}
+	}
+}
+
+function changeClass(){
+	//HTML문서내에서 첫번째 나오는 <h1>요소를 선택함
+	var targetElement=document.getElementsByTagName('h1')[0]; 
+	//선택된 요소의 class 이름의 변경
+	targetElement.className="jsClass";
+}
+
+function changeClass2(){
+	//id가 "discript"인 Div를 선택
+	var discription=document.getElementById('description');
+	//discript자식요소인 <strong>선택함
+	var targetElement=discription.getElementsByTagName('strong')[0]; 
+	//선택된 요소의 class 이름의 변경
+	targetElement.className="jsClass";
+}
+</script>
+<title>javascript : style의 적용</title>
+<style type="text/css">
+	.jsClass{
+		width:70%;
+		margin:20px;
+		padding:5px;
+		border-bottom:#399 solid 5px;
+		border-right:#399 solid 5px;
+		background:#0C6;
+		color:#9F0;
+	}
+</style>
+</head>
+<body>
+ <div id="linkList">
+ 	<h1>Web이 표시될수 있는 기기들</h1>
+    <ul>
+    	<li class="odd">PC</li>
+        <li>스마트 폰</li>
+        <li class="odd">인터넷 TV</li>
+    </ul>
+ </div><!--End of #linkList-->
+ <div id="description">
+ 	<p>웹은 <strong class="odd">장치 운영체제 독립적</strong>으로 정보를 전달하는 것을 목적으로 한다.</p>
+ </div><!--End of #linkList-->
+ <div id="test">
+     <button type="button" onclick="colorRed()"><strong>"장치 운영체제 독립적"</strong>을 빨간색으로</button>
+     <button type="button" onclick="colorBlue()"><strong>"스마트폰"</strong>을 파란색 큰 글씨로으로</button>
+     <button type="button" onclick="changeClass()"><strong>"web이 표시될수 있는기기들"</strong>의 Class변경</button>
+     <button type="button" onclick="changeClass2()"><strong>"장치 운영체제 독립적"</strong>을 Class변경</button>
+ </div>
+</body>
+</html>

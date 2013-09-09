@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<!-- Created with Ai->Canvas Export Plug-In Version 1.0 (PC)  -->
+<!-- By Mike Swanson (http://blogs.msdn.com/mswanson/)        -->
+<!-- and MIX Online  (http://visitmix.com/)                   -->
+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <title>rings</title>
+  <script>
+
+    function init() {
+
+      var canvas = document.getElementById("canvas");
+      var ctx = canvas.getContext("2d");
+
+      draw(ctx);
+    }
+
+    function draw(ctx) {
+
+      var gradient;
+
+      // layer1/
+      // This artwork uses an unsupported "Multiply" blending mode
+      ctx.save();
+      ctx.beginPath();
+      ctx.moveTo(136.5, 375.5);
+      ctx.bezierCurveTo(70.5, 309.5, 70.5, 202.5, 136.5, 136.5);
+      ctx.bezierCurveTo(202.5, 70.5, 309.5, 70.5, 375.5, 136.5);
+      ctx.bezierCurveTo(388.0, 149.0, 398.1, 162.9, 405.9, 177.8);
+      ctx.bezierCurveTo(400.3, 134.6, 381.0, 92.9, 347.9, 59.7);
+      ctx.bezierCurveTo(268.3, -19.9, 139.3, -19.9, 59.7, 59.7);
+      ctx.bezierCurveTo(-19.9, 139.3, -19.9, 268.3, 59.7, 347.9);
+      ctx.bezierCurveTo(92.9, 381.0, 134.6, 400.3, 177.8, 405.9);
+      ctx.bezierCurveTo(162.9, 398.1, 149.0, 388.0, 136.5, 375.5);
+      ctx.closePath();
+      ctx.save();
+      ctx.transform(0.707, 0.707, 0.707, -0.707, -289.0, 659.3);
+      gradient = ctx.createLinearGradient(-13.3, 538.7, -13.3, 813.7);
+      gradient.addColorStop(0.00, "rgb(196, 226, 37)");
+      gradient.addColorStop(0.70, "rgb(132, 180, 47)");
+      gradient.addColorStop(1.00, "rgb(67, 133, 57)");
+      ctx.fillStyle = gradient;
+      ctx.fill();
+
+      // layer1/
+      // This artwork uses an unsupported "Multiply" blending mode
+      ctx.restore();
+      ctx.beginPath();
+      ctx.moveTo(33.2, 272.3);
+      ctx.bezierCurveTo(99.2, 338.3, 206.3, 338.3, 272.3, 272.3);
+      ctx.bezierCurveTo(338.3, 206.3, 338.3, 99.2, 272.3, 33.2);
+      ctx.bezierCurveTo(259.8, 20.7, 245.8, 10.6, 230.9, 2.9);
+      ctx.bezierCurveTo(274.1, 8.4, 315.9, 27.7, 349.0, 60.8);
+      ctx.bezierCurveTo(428.6, 140.4, 428.6, 269.5, 349.0, 349.0);
+      ctx.bezierCurveTo(269.4, 428.6, 140.4, 428.6, 60.8, 349.0);
+      ctx.bezierCurveTo(27.7, 315.9, 8.4, 274.1, 2.9, 230.9);
+      ctx.bezierCurveTo(10.6, 245.8, 20.7, 259.8, 33.2, 272.3);
+      ctx.closePath();
+      ctx.save();
+      ctx.transform(0.707, 0.707, 0.707, -0.707, -289.0, 659.3);
+      gradient = ctx.createLinearGradient(67.6, 823.0, 67.6, 519.7);
+      gradient.addColorStop(0.00, "rgb(196, 226, 37)");
+      gradient.addColorStop(0.70, "rgb(132, 180, 47)");
+      gradient.addColorStop(1.00, "rgb(67, 133, 57)");
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      ctx.restore();
+      ctx.restore();
+    }
+  </script>
+ </head>
+ <body onload="init()">
+   <canvas id="canvas" width="409" height="409"></canvas>
+ </body>
+</html>

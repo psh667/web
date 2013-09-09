@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 면 색상</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//색상값을 입력받아 사각형을 그림
+function fillColor(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var color=document.getElementById("colorCode").value
+	ctx.fillStyle=color;
+	ctx.fillRect(0,0,150,150);
+}
+//이미지로 페턴을 작성
+function fillPattern(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var img=new Image();
+	img.onload=function(){
+		var pattern=ctx.createPattern(img,"repeat");
+		ctx.fillStyle=pattern;
+		ctx.fillRect(0,0,150,150);
+	}
+	img.src='img/coforwardIcon.png';
+}
+//반복문을 이용한 칼라 체커 생성
+function fillChecker(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	for(var i=0;i<6;i++){
+		for(var j=0;j<6;j++){
+			var R=Math.floor(255-45.5*i);
+			var G=Math.floor(255-42.5*j);
+			var B=0;
+			ctx.fillStyle='rgb('+R+','+G+','+B+')';
+			ctx.fillRect(j*25,i*25,25,25);
+		}
+	}	
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 면 색상</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>면색상의 지정</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>fillStyle=[color]</code> : 체움 색상을 지정한다.</dd>
+        <dd><code>createPattern([IMG],[repeat])</code> : 이미지로 패턴을 생성한다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[color]</code> : 색상을 지정한다. 지정하는 형식은 CSS의 색상지정과 동일하다. </dd>
+        <dd><code>[IMG]</code> : 패턴으로 사용될 이미지 객체</dd>
+        <dd><code>[repeat]</code> : 패턴의 반복 설정으로 CSS설정과 동일하다.
+        	<ul>
+                <li><code>repeat</code> : X, Y 방향 모두 반복함</li>
+                <li><code>repeat-x</code> : X 방향만 반복함</li>
+                <li><code>repeat-y</code> : Y 방향만 반복함</li>
+                <li><code>no-repeat</code> : 반복하지 않음</li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=300;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//색상값을 입력받아 사각형을 그림
+function fillColor(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var color=document.getElementById("colorCode").value
+	ctx.fillStyle=color;
+	ctx.fillRect(0,0,150,150);
+}
+//이미지로 페턴을 작성
+function fillPattern(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	var img=new Image();
+	img.onload=function(){
+		var pattern=ctx.createPattern(img,"repeat");
+		ctx.fillStyle=pattern;
+		ctx.fillRect(0,0,150,150);
+	}
+	img.src='img/coforwardIcon.png';
+}
+//반복문을 이용한 칼라 체커 생성
+function fillChecker(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	for(var i=0;i<6;i++){
+		for(var j=0;j<6;j++){
+			var R=Math.floor(255-45.5*i);
+			var G=Math.floor(255-42.5*j);
+			var B=0;
+			ctx.fillStyle='rgb('+R+','+G+','+B+')';
+			ctx.fillRect(j*25,i*25,25,25);
+		}
+	}	
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <figure> 
+       <img src="img/coforwardIcon.png" alt="coforward Icon" />
+       <figcaption>패턴용 이미지</figcaption>
+       </figure>
+       <canvas id="test" width="150" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+            <button type="button" onClick="iniCanvas()">초기화</button>
+            <input type="text" value="#22F" name="colorCode" id="colorCode">
+            <button type="submit" onclick="fillColor()">면 색상 지정</button>
+        	<button type="submit" onclick="fillPattern()">이미지 패턴 생성</button>
+            <button type="submit" onclick="fillChecker()">칼라 체커</button>
+        </div>
+    	</div>
+     </div>
+</div>
+<h1>&lt;canvas&gt; 면 색상</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

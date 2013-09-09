@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>box-reflect</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub div{
+	text-align:center;
+}
+
+#testDiv img{
+	margin:50px 25px;;
+}
+#ref_above{
+	-webkit-box-reflect:above 1px;
+}
+#ref_below{
+	-webkit-box-reflect:below 1px;
+}
+#ref_left{
+	-webkit-box-reflect:left 1px;
+}
+#ref_right{
+	-webkit-box-reflect:right 1px;
+}
+#sample img{
+	margin-bottom:50px;
+	-webkit-box-reflect:below 1px 
+		-webkit-gradient(linear,left top,left bottom,
+		from(transparent),color-stop(0.7,transparent),to(white));
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : box-reflect</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>box-reflect:[반사 방향],[offset 거리],[마스크]</dt>
+        <dd>개체에 대한 반사 효과를 지정함</dd>
+        <dt>속성 값</dt>
+        <dd><code>반사방향</code> : 반사되는 방향을 지정함 above/below/left/right</dd>
+        <dd><code>offset거리</code> : 반사체가 원본과 떨어지는 거리를 지정 </dd>
+        <dd><code>마스크</code> : 반사체 표시 부분에 마스크를 지정 할 수 있음</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #ref_above{
+            -webkit-box-reflect:above 1px;
+        }
+        #ref_below{
+            -webkit-box-reflect:below 1px;
+        }
+        #ref_left{
+            -webkit-box-reflect:left 1px;
+        }
+        #ref_right{
+            -webkit-box-reflect:right 1px;
+        }
+        #sample img{
+            margin-bottom:50px;
+            -webkit-box-reflect:below 1px 
+            -webkit-gradient(linear,left top,left bottom,
+            from(transparent),color-stop(0.7,transparent),to(white));
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+    	<div id="testDiv">
+        	<img id="ref_above" src="img/checkBox1.png" alt="반사 원본" title="위쪽으로 반사" />
+            <img id="ref_below" src="img/checkBox2.png" alt="반사 원본" title=" 아래쪽으로 반사" />
+            <img id="ref_left" src="img/checkBox3.png" alt="반사 원본" title=" 왼쪽으로 반사" />
+            <img id="ref_right" src="img/checkBox4.png" alt="반사 원본" title=" 오른쪽으로 반사" />
+        </div>
+        <div id="sample">
+			<p>box-reflect의 사용 예</p>
+            <img src="img/photo2.gif" width="300" height="200" alt="image" />
+		</div>
+    </div>
+</div>
+
+<h1>CSS3 : box-reflect</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

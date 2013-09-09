@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;line&gt;:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	.lineClass{
+		stroke:#00f;
+		stroke-width:15;
+	}
+	#lineId{
+		stroke:#f00;
+		stroke-width:15;
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;line&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt> &lt;line x1="[x1]" y1="[y1]" x2="[x2]" y2="[y2]" /&gt;</dt>
+        <dd>직선의 작성</dd>
+        <dt>속성</dt>
+        <dd><code>x1</code> : 직선 시점의 X좌표</dd>
+        <dd><code>y1</code> : 직선 시점의 y좌표</dd>
+        <dd><code>x2</code> : 직선 종점의 X좌표</dd>
+        <dd><code>y2</code> : 직선 종점의 y좌표</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	.lineClass{
+		stroke:#00f;
+		stroke-width:15;
+	}
+	#lineId{
+		stroke:#f00;
+		stroke-width:15;
+	}
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;line class="lineClass" x1="0" y1="0" x2="100" y2="100" /&gt;
+    &lt;line class="lineClass" x1="100" y1="100" x2="200" y2="100" /&gt;
+    &lt;line id="lineId" x1="200" y1="100" x2="200" y2="50" /&gt;
+    &lt;line class="lineClass" x1="200" y1="50" x2="100" y2="200" /&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <svg>
+            <line class="lineClass" x1="0" y1="0" x2="100" y2="100" />
+            <line class="lineClass" x1="100" y1="100" x2="200" y2="100" />
+            <line id="lineId" x1="200" y1="100" x2="200" y2="50" />
+            <line class="lineClass" x1="200" y1="50" x2="100" y2="200" />
+       </svg>
+    </div>
+</div>
+<h1>&lt;line&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

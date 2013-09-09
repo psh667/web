@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Table Element Layer:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+
+table{
+	border:#F00 dashed 3px;
+	border-spacing:10px;
+	background:#000;
+}
+colgroup{
+	background:#CCC;
+}
+col.col01{
+	background:#FF6;
+}
+tbody{
+	background:#9FF;
+}
+tr.color{
+	background:#6F6;
+}
+td.color{
+	background:#F60;
+}
+</style>
+</head>
+
+<body>
+<h1>Table Element Layer</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>Table Element Layer</dt>
+        <dd>테이블을 구성하는 element의 계층구조</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        table{
+            border:#F00 dashed 3px;
+            border-spacing:10px;
+            background:#000;
+        }
+        colgroup{
+            background:#CCC;
+        }
+        col.col01{
+            background:#FF6;
+        }
+        tbody{
+            background:#9FF;
+        }
+        tr.color{
+            background:#6F6;
+        }
+        td.color{
+            background:#F60;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">  
+        <table>
+        	<caption>Table Element Layer</caption>
+        	<colgroup>
+            	<col span="2" />
+                <col span="1" class="col01" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>[thead-th] element</th><th>[thead-th] element</th><th>[thead-th] element</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>[tbody-td] element</td><td>[tbody-td] element</td><td>[tbody-td] element</td>
+                </tr>
+                <tr class="color">
+                    <td>[tbody-td] element</td><td class="color">[tbody-td] element</td><td>[tbody-td] element</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<h1>Table Element Layer</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

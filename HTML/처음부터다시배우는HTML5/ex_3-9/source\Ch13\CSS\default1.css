@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body {
+	background-color: #898989;
+	margin:0;
+	padding:0;
+	font-size: 0.75em;
+	line-height: 1.2em;
+	color: #333;
+}
+
+img {
+	border:none;
+}
+
+
+
+#wrap {
+	width:971px;
+	text-align:left;
+	margin:0;
+	margin-right: auto;
+	margin-left: auto;	
+}
+
+
+#logo {
+	float:left;
+	width:265px;
+	margin:40px 0 0 40px;
+	/* display:inline;   ie6 bgu fix */	
+
+}
+

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 이미지로 변환</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=150;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//원본 <canvas> 요소 작성
+function orgCanvas(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	
+	ctx.fillStyle="#09F";
+	ctx.fillRect(15,15,70,70);
+	ctx.globalCompositeOperation="xor";
+	
+	ctx.fillStyle="#F30";
+	ctx.beginPath();
+	ctx.arc(75,75,35,0,Math.PI*2,true);
+	ctx.fill();  
+}
+
+//캔버스 요소를 이미지로 변환함
+function getURL(){
+	//변환할 타입의 설정
+	var imgType='image/png';
+	var types=document.getElementsByName("type");
+	for(var i=0;i<types.length;i++){
+		if(types[i].checked){
+			imgType=types[i].value;
+		}
+	}
+	
+	//이미지로 변환함
+	var canvas=document.getElementById("test");
+	var data=canvas.toDataURL(imgType);
+	
+	//변환된 이미지를 html 요소로 삽입함
+	var newImg=document.createElement('IMG');
+		newImg.src=data;
+		newImg.alt="&lt;canvas&gt;에서 생성된 이미지="+imgType;
+		newImg.title="&lt;canvas&gt;에서 생성된 이미지="+imgType;
+	document.getElementById('urlincodingImg').appendChild(newImg);
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 이미지로 변환</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>&lt;canva&gt;를 이미지 파일로 변환한다.</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>toDataURL([type])</code> : &lt;canva&gt;에 그려진 내용을 URL로 인코딩한다. Context("2d")의 메서드가 아니라 &lt;canva&gt;요소 자체의 메서드이다.</dd>
+        <dt>매개변수</dt>
+        <dd><code>[type]</code> : 변환할 이미지 타입의 MIME형식 ("image/png", "image/jpg")</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=150;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//원본 요소 작성
+function orgCanvas(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	
+	ctx.fillStyle="#09F";
+	ctx.fillRect(15,15,70,70);
+	ctx.globalCompositeOperation="xor";
+	
+	ctx.fillStyle="#F30";
+	ctx.beginPath();
+	ctx.arc(75,75,35,0,Math.PI*2,true);
+	ctx.fill();  
+}
+
+//캔버스 요소를 이미지로 변환함
+function getURL(){
+	//변환할 타입의 설정
+	var imgType='image/png';
+	var types=document.getElementsByName("type");
+	for(var i=0;i&lt;types.length;i++){
+		if(types[i].checked){
+			imgType=types[i].value;
+		}
+	}
+	
+	//이미지로 변환함
+	var canvas=document.getElementById("test");
+	var data=canvas.toDataURL(imgType);
+	
+	//변환된 이미지를 html 요소로 삽입함
+	var newImg=document.createElement('IMG');
+		newImg.src=data;
+		newImg.alt="&lt;canvas&gt;에서 생성된 이미지="+imgType;
+		newImg.title="&lt;canvas&gt;에서 생성된 이미지="+imgType;
+	document.getElementById('urlincodingImg').appendChild(newImg);
+} </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <canvas id="test" width="120" height="120">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="urlincodingImg">
+        	<h3>&lt;canvas&gt;에서 변환된 이미지 요소</h3>
+        </div>
+        <div id="btnDiv">
+        	<p><button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="button" onclick=" orgCanvas();">원본 Canvas 생성</button>
+            인코딩 형식 : 
+        	
+        	<input id="type_png" name="type" value="image/png" checked="checked" type="radio"><label for="type_png">png</label>
+            <input id="type_jpg" name="type" value="image/jpeg" type="radio"><label for="type_jpg">jpeg</label>
+        	<button type="button" onclick="getURL();">URL 인코딩</button>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 이미지로 변환</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>4장 간단한 회원 로그인 폼</title>
+<style type="text/css">
+body {
+	font-family: "맑은 고딕";
+	font-size: 0.75em;
+	color: #666;
+}
+
+.login_box {
+	/* 전체 로그인 박스의 윤곽을 만들어 주는 곳 */
+	margin:10px;
+	border:1px solid #666666;
+	border-radius:10px;
+	width:180px;
+	padding:10px;
+}
+
+label {
+	/* input 박스에 앞서 라벨링 해주는 label 태그*/
+	width:50px;
+	display:block;
+	/* 여기서 block 해주면 label 은 블록 선택자 처럼 작동하여
+	inout 박스 바로 위에 위치하게 됨 
+	만약 label을 input 박스 앞에 위치해 주고 싶을때는 
+	flot:left; 를 추가 해주면 됨 */
+	margin:3px 0;	
+	float:left;
+}
+input {
+	/* input 박스의 크기와 테두리를 지정 */
+	border:1px solid #333333;
+	width:120px;
+}
+
+input:focus {
+	/* 수도 선택자로 해당 input 박스에 커서가 왔을 때 변화 모습 */
+	background-color: #FC0;
+	border:1px solid #000;
+	color:#333333;
+}
+
+/* 아래와 같이 정의 하면 링크가 텍스트에만 걸리는 것이 아니라 전체 박스에 링크가 걸림 */
+
+.btn a {
+	/* 로그인 버튼 잡아주는 곳 */
+	margin:7px 7px 7px 0;
+	display:block;
+	padding:5px;
+	text-align:center;
+	width:100px;
+	border:1px solid #333;
+	text-decoration:none;
+	border-radius:5px;
+	background-color: #FC3;
+	color: #333;
+	box-shadow:3px 3px 3px #999999;
+}
+
+.btn a:hover {
+	/* 로그인 버튼에 마우스 오버를 할 경우 액션 */
+	background-color:#FF6633;
+	color:#FFF;
+
+}
+.btn a:active {
+	/* 로그인 버튼에 마우스로 클릭를 할 경우 액션 */
+	box-shadow:none;
+}
+/* 아래의 선택자는 엄청 유용하게 사용가능합니다. 
+박스 모델에서 모서리와 모서리의 충돌로 디자인이 어긋나 있을때 
+양 옆을 클리어 해줘 디자인을 바로 잡아 주는 역할을 합니다.
+3부에서 자세히 소개하겠습니다. */
+.clear {
+	clear:both;
+}
+</style>
+</head>
+
+<body>
+<div class="login_box">
+<form>
+<label>아이디</label><input name="userid" type="text">
+<div class="clear"></div>
+<label>패스워드</label><input name="passwprd" type="password">
+<span class="btn"><a href="#"> 로그인하기</a></span>
+</form>
+
+</div>
+
+</body>
+</html>

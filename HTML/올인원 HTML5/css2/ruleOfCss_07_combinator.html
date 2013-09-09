@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>combinator:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#exampleSub p{
+		margin-left:15px;
+		padding:5px;
+	}
+	#exampleSub ul{
+		margin-left:40px;
+		padding:5px;
+	}
+	#exampleSub ul p{
+		margin-left:0px;
+	}
+	#exampleSub div{
+		background:#FF9;
+		border:#F90 solid 2px;
+	}
+	.btnDiv{
+		text-align:center;
+	}
+</style>
+<link rel="stylesheet" id="testCSS" href="#" type="text/css" />
+<script type="text/javascript">
+function cssChange(cssName){
+	cssLink=document.getElementById("testCSS")
+	cssLink.setAttribute("href",cssName);
+}
+</script>
+
+</head>
+
+<body>
+<h1>combinator</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>하위요소 결합자</dt>
+        <dd>여러 요소를 한꺼번에 선택하는 방법</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+	a:hover,input:focus,span{
+		background:#0ff;
+	}
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3>CSS 결합자 예제</h3>
+        <p>CSS 결합자는 두개의 선택자를 결합해 줍니다.</p>
+        <p>결합에 방법에 따라 각기 다른 효과를 갖습니다.</p>
+        <div><!--기준 div -->
+            <h4>CSS 결합자의 종류</h4>
+            <p>CSS 결합자의 종류에는 하위 요소 결합자, 자식 요소 결합자, 인접 형제 결합자, 형제 결합자가 있습니다.</p>
+            <ul>
+                <li><p>하위 요소 결합자는 앞의 선택자로 선택된 요소의 하위 요소 중 뒤의 선택자와 일치하는 요소가 선택됩니다.</p></li>
+                <li><p>자식 요소 결합자는 앞의 선택자로 선택된 요소의 직계 자손 요소 중에서 뒤의 선택자와 일치하는 요소가 선택됩니다.</p></li>
+                <li><p>인접 형제 결합자는 앞의 선택자와 동일한 레벨로, 뒤에 오는 요소 중 뒤의 선택자와 일치하는 첫 번째 요소를 선택합니다.</p></li>
+                <li><p>형제 결합자는 앞의 선택자와 동일한 레벨로, 뒤로 오는 요소 중 뒤의 선택자와 요소를 선택합니다.</p></li>
+            </ul>
+        </div>
+        <p>CSS 결합자는 CSS Level별로 각기 지원하는 범위가 다릅니다.</p>
+        <h4>CSS level 현황</h4>
+        <p>CSS level 1은 표준 권고입니다.</p>
+        <p>CSS level 2.1은 권고 후보입니다.</p>
+        <p>CSS level 3은 작업 초안입니다.</p>
+    </div>
+    <div class="btnDiv">
+    <button type="button" onclick="cssChange('css/descendant.css')">결합자 : div p</button>
+    <button type="button" onclick="cssChange('css/child.css')">결합자 : div>p</button>
+    <button type="button" onclick="cssChange('css/adjacentSibling.css')">결합자 : div+p</button>
+    <button type="button" onclick="cssChange('css/generalSibling.css')">결합자 : div~p</button>
+    <button type="button" onclick="cssChange('css/groupSelector.css')">선택자 그룹 : div>p,div+p</button>
+	</div>
+</div>
+
+<h1>combinator</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

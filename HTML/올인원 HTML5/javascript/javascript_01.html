@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" language="javascript">
+/**********************************************
+javascript를 DOM요소의 선택
+***********************************************/
+
+function viewChileNode(){
+	var element=document.getElementById('linkList').childNodes;
+	for(var i=0;i<element.length;i++){
+		alert(element[i].nodeType+'-----'+element[i].nodeName+'-----'+element[i].nodeValue);
+	}
+}
+
+function viewSilbing(){
+	var element=document.getElementById('linkList');
+	var cnt=1;
+	while(element.nextSibling){ 
+		alert(element.nodeType+'-----'+element.nodeName+'-----'+element.nodeValue);
+		element=element.nextSibling;
+		cnt++;
+	}
+	alert('#linkList 형제요소 갯수 : '+cnt);
+}
+
+
+function getId(){
+	var element=document.getElementById('linkList');
+	alert("nodeType :"+element.nodeType +"\n tagName : "+element.tagName +"\n id : "+element.id+"\n className :"+element.className);
+}
+
+function getTagName(){
+	var element=document.getElementById('linkList');
+	var list=element.getElementsByTagName('li');
+	for(var i=0;i<list.length;i++){
+		alert("nodeType :"+list[i].nodeType +"\n tagName : "+list[i].tagName +"\n id : "+list[i].id+"\n className :"+list[i].className);
+	}
+	alert("선택된 요소의 갯수 : "+list.length);
+}
+
+
+function getClassName(){
+	var element=document.getElementsByClassName('odd');
+	for(var i=0;i<element.length;i++){
+		alert("nodeType :"+element[i].nodeType +"\n tagName : "+element[i].tagName +"\n id : "+element[i].id+"\n className :"+element[i].className);
+	}
+	alert("선택된 요소의 갯수 : "+element.length);
+}
+
+function querySelect(){
+	var element=document.querySelector('#linkList li.odd');
+	alert("nodeType :"+element.nodeType +"\n tagName : "+element.tagName +"\n id : "+element.id+"\n className :"+element.className);
+}
+
+function querySelectAll(){
+	var element=document.querySelectorAll('#linkList li.odd');
+	for(var i=0;i<element.length;i++){
+		alert("nodeType :"+element[i].nodeType +"\n tagName : "+element[i].tagName +"\n id : "+element[i].id+"\n className :"+element[i].className);
+	}
+	alert("선택된 요소의 갯수 : "+element.length);
+}
+</script>
+<title>javascript : 요소의 선택</title>
+</head>
+<body>
+ <div id="linkList">
+ 	<h1>Web이 표시될수 있는 기기들</h1>
+    <ul>
+    	<li class="odd">PC</li>
+        <li>스마트 폰</li>
+        <li class="odd">인터넷 TV</li>
+    </ul>
+ </div><!--End of #linkList-->
+ <div id="description">
+ 	<p>웹은 <strong class="odd">장치 운영체제 독립적</strong>으로 정보를 전달하는 것을 목적으로 한다.</p>
+ </div><!--End of #linkList-->
+ <div id="test">
+     <button type="button" onclick="getId()">getId</button>
+     <button type="button" onclick="getTagName()">getTagName</button>
+     <button type="button" onclick="getClassName()">getClassName</button>
+     <button type="button" onclick="querySelect()">querySelect</button>
+     <button type="button" onclick="querySelectAll()">querySelectAll</button>
+     <button type="button" onclick="viewChileNode()">viewChileNode</button>
+     <button type="button" onclick="viewSilbing()">viewSilbing</button>
+ </div>
+</body>
+</html>

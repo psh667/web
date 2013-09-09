@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 좌표계 형태 일괄 변경</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//변환 메트릭스 예
+function transform(){
+	ctx.save()
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	var img=new Image();
+	img.onload=function(){
+		//이미지 삽입
+		ctx.drawImage(img,100,0,240,223);
+		//반사 이미지 설정
+		ctx.globalAlpha=0.3;
+		ctx.transform(1,0,0,-0.5,0,223*1.5);
+		//이미지 삽입
+		ctx.drawImage(img,100,0,240,223);
+	}
+	img.src="img/coforwardQr.gif";
+	ctx.restore();
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 좌표계 형태 일괄 변경</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>캔버스의 좌표계 형태를 변환 메트릭스를 사용하여 일괄적으로 변경함</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>transform([martix])</code> : &lt;canvase&gt; 좌표계에 대한 변경을 변환 메트릭스를 사용하여 일괄적용한다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[martix]</code>&lt;canvas&gt;에 좌표계 적용될 변환 좌표.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+
+//변환 메트릭스 예
+function transform(){
+	ctx.save()
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	var img=new Image();
+	img.onload=function(){
+		//이미지 삽입
+		ctx.drawImage(img,100,0,240,223);
+		//반사 이미지 설정
+		ctx.globalAlpha=0.3;
+		ctx.transform(1,0,0,-0.5,0,223*1.5);
+		//이미지 삽입
+		ctx.drawImage(img,100,0,240,223);
+	}
+	img.src="img/coforwardQr.gif";
+	ctx.restore();
+}
+
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="400" height="300">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+        	<button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="button" onClick="transform()">transform을 이용한 반사 이미지 작성</button>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 좌표계 형태 일괄 변경</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

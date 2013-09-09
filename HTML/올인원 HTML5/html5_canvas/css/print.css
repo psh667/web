@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, p, form, fieldset, input, th, td{margin:0;padding:0;}
+
+body{
+	font-family:"맑은 고딕", sans-serif;
+	font-size:0.75em;
+}
+h1{
+	font-size:160%;
+	text-align:center;
+	background:#999;
+	color:#fff;
+	padding:5px 0;
+}
+h2{
+	padding:5px 0 5px 10px;
+	border-bottom:#ccc solid 1px;
+	border-top:#ccc solid 1px;	
+}
+#description{
+	page-break-after:always;
+}
+
+#code, #code_js, #codeDispayNone{
+	display:block;
+	width:100%;	
+}
+	
+#description dl{padding:10px;}
+.codeArea{
+	white-space:pre;
+	font-family: "나눔고딕코딩","Lucida Console", Monaco, monospace;
+	color:#009b7f;
+	padding:10px;
+}	
+#exampleSub{
+	padding:10px;
+	text-align:center;
+}
+
+#example{margin:0 auto;}
+
+.printOnly{
+	text-align:right;
+}
+.screenOnly{
+	display:none;
+}
+
+#btnDiv{
+	display:none;
+
+}
+/*책이름*/
+#bookName{
+	color:#000;
+}
+
+/*coForward 이름 단어 설정*/
+.coforward{
+	color:#0099D8;
+	font-style:normal;
+	font-weight:bold;
+	font-family:nanumFont,"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+.coforward span{
+	color:#0850A0;
+	font-variant:small-caps;
+	font-family:nanumFont,"Trebuchet MS", Arial, Helvetica, sans-serif;
+}

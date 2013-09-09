@@ -1,0 +1,10 @@
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (4, '축하합니다.!', '드디어 오픈하셨군요. 3등~', 'spider', '2009/11/24', '13:30:12');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (5, '4등!!!', '인터넷 구매는 어디서 하나요?', 'jb007', '2009/11/24', '13:31:29');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (6, '5등!', '이 다음은 순위권 밖!!', 'kirk', '2009/11/24', '13:31:55');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (7, '6등!!!', '앗! 언제 오픈한 건가요?', 'shadow', '2009/11/24', '13:32:09');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (8, '6등~~', '6등~~~~~~~~~~~ 아닌가??', 'colonel', '2009/11/24', '13:32:15');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (9, '등수놀이 좀 그만합시다.', '***8등*** ┗(-_- )┓', 'woods', '2009/11/24', '13:34:20');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (10, '9등', '^.^', 'apache', '2009/11/24', '13:35:03');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (11, '10등 -----------절취선-----------', '10등.', 'amadeus', '2009/11/24', '13:37:15');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (12, '~~~11등~~~ v(^0^)v', 'o(*^-^*)o', 'jj8539', '2009/11/24', '13:39:00');
+insert into bbs (seqno, title, content, writer, wdate, wtime) values (13, '(/^o^)/', '야호~~', 'neptune', '2009/11/24', '13:42:59');

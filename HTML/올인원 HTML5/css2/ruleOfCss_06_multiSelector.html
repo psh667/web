@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>multi-Select:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+#exampleSub *{
+	line-height:18px;
+	margin:10px 15px;
+}
+
+a:hover,input:focus,span{
+	background:#0ff;
+}
+
+</style>
+</head>
+
+<body>
+<h1>multi-Select</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>다중선택</dt>
+        <dd>여러 요소를 한꺼번에 선택할때는 선택자를 ","로 구분하여 사용한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+	a:hover,input:focus,span{
+		background:#0ff;
+	}
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3 id="idEle" class="doubleBorder">[h3] element id="idEle" class="doubleBorder"</h3>
+        <p>[p] elemet</p>
+        <p>[p] elemet<span class="doubleBorder">[p-span] element class="doubleBorder"</span></p>
+        <p class="doubleBorder">[p] element class="doubleBorder"<span>[p-span] element</span></p>
+        <div class="doubleBorder">
+             [div] element class="doubleBorder"
+            <p>[div-p] element 
+                <label for="testinput">테스트 인풋</label>
+                <input type="text" name="testinput" id="testinput" />
+			</p>
+            <p>[div-p] element <a class="doubleBorder" href="#">[div-p-a element] class="doubleBorder"</a></p>
+        </div>
+     </div>
+</div>
+
+<h1>multi-Select</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

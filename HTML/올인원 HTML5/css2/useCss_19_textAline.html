@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>text-aling:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub div{
+	border:#333 double 3px;
+	padding:10px;
+}
+
+#exampleSub div p{
+	margin:10px;
+}
+
+#par01{
+	background:#3FF;
+	text-align:left;
+}
+#par02{
+	background:#FF6;
+	text-align:center;
+}
+#par03{
+	background:#3F3;
+	text-align:right;
+}
+</style>
+</head>
+
+<body>
+<h1>text-aling</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>text-align:[value];</dt>
+        <dd>문장의 정렬방식을 정한다.</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #par01{
+            background:#3FF;
+            text-align:left;
+        }
+        #par02{
+            background:#FF6;
+            text-align:center;
+        }
+        #par03{
+            background:#3F3;
+            text-align:right;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">  
+        <div id="box01">
+        	<p id="par01">[div-p] element id="par01" +|+</p>
+            <p id="par02">[div-p] element id="par02" +|+</p>
+            <p id="par03">[div-p] element id="par03" +|+</p>
+        </div>
+    </div>
+</div>
+<h1>text-aling</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

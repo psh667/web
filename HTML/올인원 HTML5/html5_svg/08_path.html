@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;pass&gt;:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#passSample{
+		fill:transparent;
+		stroke:#0f0;
+		stroke-width:10;
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;pass&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>&lt;pass d="[pass Code]" /&gt;</dt>
+        <dd>복잡한 선의 작성</dd>
+        <dt>[pass Code]</dt>
+        <dd><code>M[x][y]</code> : 작도 시점 이동:이동할 X,Y좌표</dd>
+        <dd><code>L[x][y]</code> : 직선 그리기:선을 그릴 X,Y좌표</dd>
+        <dd><code>H[x]</code> : 수평선 그리기:수평선을 그릴 X좌표</dd>
+        <dd><code>V[y]</code> : 수직선 그리기:수직선을 그릴 Y좌표</dd>
+        <dd><code>C[c1x] [c1y] [c2x] [c2y] [x] [y]</code> : 커브 그리기:조절점1의 X,Y좌표 조절점2의 X,Y좌표 커브종점의 X,Y좌표</dd>
+        <dd><code>S[c1x] [c1y] [x] [y]</code> : 단순 커브 그리기:조절점 X,Y 커브종점의 X,Y좌표</dd>
+        <dd><code>Q[c1x] [c1y] [x] [y]</code> : 2차 베지어곡선:조절점 X,Y 곡선종점의 X,Y좌표</dd>
+        <dd><code>T[x] [y]</code> : 베지어곡선:곡선종점의 X,Y좌표</dd>
+        <dd><code>A[rx] [ry] [degx] [func] [direc] [x] [y]</code> : 타원 호:X방향 지름, Y방향 지름, X축에 대한 경사도, 호 생성방법, 회전방향, 호끝점의 X,Y좌표</dd>
+        <dd><code>Z</code> : pass 닫기</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+    #passSample{
+        fill:#FFF;
+        stroke:#0f0;
+        stroke-width:10;
+    }
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;path id="passSample" 
+        d="M50 50 
+            L150 150
+            H250
+            V50
+            Q350 150 350 70
+            T200 30
+            C250 100 200 200 100 150
+            S150 180 150 50
+            Z"
+     /&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <svg>
+       		<path id="passSample" 
+            	d="M50 50 
+                   L150 150
+                   H250
+                   V50
+                   Q350 150 350 70
+                   T200 30
+                   C250 100 200 200 200 190
+                   S150 180 350 100
+                   A10 10 0 1 1 150 50 
+                   Z
+                   "/>
+       </svg>
+    </div>
+</div>
+<h1>&lt;pass&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

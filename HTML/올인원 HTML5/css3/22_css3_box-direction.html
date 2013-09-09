@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>box-direction</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub>div{
+	margin:0 auto;
+	margin-bottom:15px;
+	border:#CCC solid 5px;
+}
+#exampleSub h3{font-family:arial;font-weight:bold;color:#808285;padding-bottom:5px;}
+#verticalBox{
+	display:box;
+	display:-webkit-box;
+	display:-moz-box;
+	box-orient:vertical;
+	-webkit-box-orient:vertical;
+	-moz-box-orient:vertical;
+	box-direction:reverse;
+	-webkit-box-direction:reverse;
+	-moz-box-direction:reverse;
+}
+#horizontalBox{
+	display:box;
+	display:-webkit-box;
+	display:-moz-box;
+	box-orient:horizontal;
+	-webkit-box-orient:horizontal;
+	-moz-box-orient:horizontal;
+	box-direction:reverse;
+	-webkit-box-direction:reverse;
+	-moz-box-direction:reverse;
+}
+#horizontalBox div{
+	width:25%;
+
+}
+.inBox01,.inBox02,.inBox03{
+	text-align:center;
+	font-size:20px;
+	font-weight:bold;
+}
+.inBox01{
+	background:#F96;
+}
+.inBox02{
+	background:#0C3;
+}
+.inBox03{
+	background:#39F;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : box-direction</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>box-direction</dt>
+        <dd>컨텐츠 박스가 배치되는 순서의 흐름을 지정함</dd>
+        <dt>속성 값</dt>
+        <dd><code>nomal</code> : 작성된 순서대로 배치</dd>
+        <dd><code>reverse</code> : 작성된 순서화 반대로 배치</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #verticalBox{
+            display:box;
+            display:-webkit-box;
+            display:-moz-box;
+            box-orient:vertical;
+            -webkit-box-orient:vertical;
+            -moz-box-orient:vertical;
+            box-direction:reverse;
+            -webkit-box-direction:reverse;
+            -moz-box-direction:reverse;
+        }
+        #horizontalBox{
+            display:box;
+            display:-webkit-box;
+            display:-moz-box;
+            box-orient:horizontal;
+            -webkit-box-orient:horizontal;
+            -moz-box-orient:horizontal;
+            box-direction:reverse;
+            -webkit-box-direction:reverse;
+            -moz-box-direction:reverse;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <h3>box-orient:vertical</h3>
+        <div id="verticalBox">
+            <div class="inBox01">
+                1
+            </div>
+            <div class="inBox02">
+                2
+            </div>
+            <div class="inBox03">
+                3
+            </div>
+     	</div>
+        <h3>box-orient:horizontal</h3>
+        <div id="horizontalBox">
+            <div class="inBox01">
+                1
+            </div>
+            <div class="inBox02">
+                2
+            </div>
+            <div class="inBox03">
+                3
+            </div>
+     	</div>
+     </div>
+</div>
+<h1>CSS3 : box-direction</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

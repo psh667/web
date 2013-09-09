@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>font:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub div{
+	border:#333 double 3px;
+	padding:10px;
+}
+#org{
+	background:#FC6;
+}
+
+#par01{
+	background:#0FC;
+	font-style:italic;
+	font-variant:small-caps;
+	font-weight:bold;
+	font-size:20px;
+	font-family:"맑은 고딕",Verdana;
+	line-height:200%;
+}
+#par02{
+	background:#FF9;
+	font:italic small-caps bold 20px/2 "맑은 고딕",Verdana;
+}
+
+
+
+</style>
+</head>
+
+<body>
+<h1>font</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>font:[value] [value] [value] …;</dt>
+        <dd>글꼴관련 속성 일괄지정</dd>
+        <dd>font-size, font-family 생략불가</dd>
+        <dd>line-height를 font-size/[비율]로 지정할 수 있음</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+&lt;style type="text/css"&gt;
+    #par01{
+        background:#0FC;
+        font-style:italic;
+        font-variant:small-caps;
+        font-weight:bold;
+        font-size:20px;
+        font-family:"맑은 고딕",Verdana;
+        line-height:200%;
+    }
+    #par02{
+        background:#FF9;
+        font:italic small-caps bold 20px/2 "맑은 고딕",Verdana;
+    }
+&lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">  
+        <div id="box01">
+        	<p id="org">[div-p] element id="org" +|+ [div-p] element id="ogr" +|+ [div-p] element id="org" +|+ [div-p] element id="org" </p>
+            <p id="par01">[div-p] element id="par01" +|+ [div-p] element id="par01" +|+ [div-p] element id="par01" +|+ [div-p] element id="par01" </p>
+            <p id="par02">[div-p] element id="par02" +|+ [div-p] element id="par02" +|+ [div-p] element id="par02" +|+ [div-p] element id="par02"</p>
+        </div>
+    </div>
+</div>
+<h1>font</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

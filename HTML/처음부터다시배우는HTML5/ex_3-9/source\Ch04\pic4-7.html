@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS Border  속성 살펴보기</title>
+
+<style type="text/css"> 
+.round {
+	border:1px solid #a1a1a1;
+	margin:20px;
+	padding:10px;
+	width:300px;
+	height:100px;
+	border-radius:25px;
+	-moz-border-radius:25px; /* Firefox 3.6 and earlier */
+	background-color: #FFCC00;
+}
+
+.shadow  {
+	width:300px;
+	height:100px;
+	margin:20px;
+	padding:10px;
+	background-color:#69F;
+	-moz-box-shadow: 10px 10px 10px #888888; /* Firefox 3.6 and earlier */
+	-webkit-box-shadow: 10px 10px 10px #888888; /* Safari */
+	box-shadow: 10px 10px 10px #888888;
+}
+
+.borderimage {
+	border:22px;
+	margin:20px;
+	width:230px;
+	height:180px;
+	padding:30px;
+	-moz-border-image:url(frame.png) 30 30 round; /* Firefox */
+	-webkit-border-image:url(frame.png) 30 30 round; /* Safari and Chrome */
+	-o-border-image:url(frame.png) 30 30 round; /* Opera */
+	border-image:url(frame.png) 30 30 round;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="round"> 여기는 테두리가 둥근 곳입니다.</div> 
+<div class="shadow"> 박스 쉐도우가 들어가는 곳입니다.</div>
+<div class="borderimage"> 
+여기는 프레임이 들어가는 부분입니다.
+
+
+</div>
+
+
+</body>
+</html>

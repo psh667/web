@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>interaction:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	circle, rect{
+		cursor:pointer;
+	}
+	rect{
+		fill:#0C6;
+		stroke:#ccc;
+		stroke-width:5;
+	}
+	text{
+		font-size:15px;
+		font-weight:bold;
+	}
+	#interaction{
+		stroke:#ccc;
+		stroke-width:5;
+		fill:url(#rGradientSample01);
+	}
+</style>
+<script type="text/javascript">
+	function svgInteraction(svg){
+		alert(svg.firstChild.nodeValue);
+		svg.id="interaction"
+	}
+</script>
+</head>
+
+<body>
+<h1>interaction</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>interaction</dt>
+        <dd>SVG요소별 인테렉션의 지정</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	circle, rect{
+		cursor:pointer;
+	}
+	rect{
+		fill:#0C6;
+		stroke:#ccc;
+		stroke-width:5;
+	}
+	text{
+		font-size:15px;
+		font-weight:bold;
+	}
+	#interaction{
+		stroke:#ccc;
+		stroke-width:5;
+		fill:url(#rGradientSample01);
+	}
+&lt;/style&gt;
+
+&lt;!--javascript 부분--&gt;
+&lt;script type="text/javascript"&gt;
+	function svgInteraction(svg){
+		alert(svg.firstChild.nodeValue);
+		svg.id="interaction"
+	}
+&lt;/script&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;defs&gt;
+        &lt;radialGradient id="rGradientSample01"
+            cx="50%" cy="50%"
+            fx="40%" fy="40%" r="30%"
+            spreadMethod="reflect"&gt;
+            &lt;stop offset="0%"   stop-color="#F00" stop-opacity="1"/&gt;
+            &lt;stop offset="50%"   stop-color="#0F0" stop-opacity="0.7"/&gt;
+            &lt;stop offset="100%" stop-color="#00F" stop-opacity="0.5" /&gt;
+        &lt;/radialGradient&gt;
+    &lt;/defs&gt;  
+    &lt;a xlink:href="http://coforward.com" target="_blank"&gt;
+	    &lt;rect x="60" y="50" width="100" height="100" rx="10" ry="10" /&gt;
+    &lt;/a&gt;
+    &lt;text x="90" y="170"&gt;a link&lt;/text&gt;
+    &lt;circle cx="280" cy="100" r="50" onclick="svgInteraction(this)"&gt;
+    	"svg interaction Test"
+    &lt;/circle&gt;
+    &lt;text x="250" y="170"&gt;javascript&lt;/text&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+        <div id="exampleSub">
+         <svg>
+         <defs>
+            <radialGradient id="rGradientSample01"
+               cx="50%" cy="50%"
+               fx="40%" fy="40%" r="30%"
+               spreadMethod="reflect">
+              <stop offset="0%"   stop-color="#F00" stop-opacity="1"/>
+              <stop offset="50%"   stop-color="#0F0" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#00F" stop-opacity="0.5" />
+            </radialGradient>
+        </defs>  
+        <a xlink:href="http://coforward.com" target="_blank">
+        	<rect x="60" y="50" width="100" height="100" rx="10" ry="10" />
+        </a>
+        <text x="90" y="170">a link</text>
+        <circle cx="280" cy="100" r="50" onclick="svgInteraction(this)">
+        	"svg interaction Test"
+        </circle>
+        <text x="250" y="170">javascript</text>
+        </svg>
+    </div>
+</div>
+<h1>interaction</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

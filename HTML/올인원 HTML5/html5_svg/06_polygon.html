@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;polygon&gt;:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#polygonSample{
+		fill:#00f;
+		stroke:rgba(255,0,0,0.5);
+		stroke-width:20;
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;polygon&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt> &lt;polygon points="[code] [code] [code]..." /&gt;</dt>
+        <dd>다각형의 작성</dd>
+        <dt>속성</dt>
+        <dd><code>code</code> : 다각형을 구성하는 x,y좌표 공란으로 구분함</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	#polygonSample{
+		fill:#00f;
+		stroke:rgba(255,0,0,0.5);
+		stroke-width:20;
+	}
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+    &lt;polygon id="polygonSample" 
+            points="80,10
+                    250,30
+                    200,120
+                    80,200
+                    120,100" /&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <svg>
+       		<polygon id="polygonSample" 
+            	points="80,10
+                	    250,30
+                    	200,120
+                    	80,200
+                    	120,100" />
+       </svg>
+    </div>
+</div>
+<h1>&lt;polygon&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

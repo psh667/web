@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>column</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub h3{font-family:arial;font-weight:bold;text-transform:uppercase;color:#808285;padding-bottom:5px;}
+
+#exampleSub div{
+	margin-bottom:15px;
+	width:100%;
+	border:1px solid #ccc;
+	padding:10px;}
+
+#textBox02{
+	columns:200px 2;
+	column-rule:1px solid #ccc;
+	column-gap:40px;
+	
+	-webkit-columns:200px 2;
+	-webkit-column-rule:1px solid #ccc;
+	-webkit-column-gap:40px;
+
+	-moz-column-width:200px;
+	-moz-column-count:2;
+	-moz-column-rule:1px solid #ccc;
+	-moz-column-gap:40px;	
+}
+#textBox03{
+	column-width:33%;
+	column-count:3;
+	column-rule:1px solid #ccc;
+	column-gap:20px;
+
+	-webkit-column-width:33%;
+	-webkit-column-count:3;
+	-webkit-column-rule:1px solid #ccc;
+	-webkit-column-gap:20px;
+
+	-moz-column-width:33%;
+	-moz-column-count:3;
+	-moz-column-rule:1px solid #ccc;
+	-moz-column-gap:20px;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : column</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>column</dt>
+        <dd>문장을 다단으로 표시함</dd>
+		<dd><code>column-count</code> : 단의 수 </dd>
+        <dd><code>column-width</code> : 단의 폭 </dd>
+        <dd><code>column-gap</code> : 단과 단 사이의 거리</dd>
+        <dd><code>column-rule</code> : 단과 단 사이의 구분선 지정</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #exampleSub div{
+            margin-bottom:15px;
+            width:100%;
+            border:1px solid #ccc;
+            padding:10px;}
+        
+        #textBox02{
+            column-width:300px;
+            column-count:2;
+            column-rule:1px solid #ccc;
+            column-gap:40px;
+            
+            -webkit-column-width:180px;
+            -webkit-column-count:2;
+            -webkit-column-rule:1px solid #ccc;
+            -webkit-column-gap:40px;
+        
+            -moz-column-width:180px;
+            -moz-column-count:2;
+            -moz-column-rule:1px solid #ccc;
+            -moz-column-gap:40px;
+        }
+        #textBox03{
+            column-width:33px;
+            column-count:3;
+            column-rule:1px solid #ccc;
+            column-gap:20px;
+        
+            -webkit-column-width:33%;
+            -webkit-column-count:3;
+            -webkit-column-rule:1px solid #ccc;
+            -webkit-column-gap:20px;
+        
+            -moz-column-width:33%;
+            -moz-column-count:3;
+            -moz-column-rule:1px solid #ccc;
+            -moz-column-gap:20px;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+		<h3>2 column</h3>
+		<div id="textBox02">
+			<p>In short, the CSS3 Multi-Column Module is a functionality to flow the content of an element into multiple columns.</p>
+			<p>The Multi-Column Module is part of the CSS3 specifications proposed by the W3C.</p>
+			<p>This extension to the CSS Box Model opens a new range of possibilities in terms of web design. Multi-column layouts that are so pervasive in the print media (think newspapers, magazines) can now become a reality on the web.</p>
+		</div>
+
+		<h3>3 column</h3>
+		<div id="textBox03">
+			<p>In short, the CSS3 Multi-Column Module is a functionality to flow the content of an element into multiple columns.</p>
+			<p>The Multi-Column Module is part of the CSS3 specifications proposed by the W3C.</p>
+			<p>This extension to the CSS Box Model opens a new range of possibilities in terms of web design. Multi-column layouts that are so pervasive in the print media (think newspapers, magazines) can now become a reality on the web.</p>
+		</div>
+     </div>
+</div>
+
+<h1>CSS3 : column</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

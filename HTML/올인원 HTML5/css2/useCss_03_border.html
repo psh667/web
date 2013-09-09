@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>border:css</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#outBox{
+	width:400px;
+	border:#f00 solid 5px;
+	background:#CCC;
+}
+
+#inBox01{
+	background:#0F9;
+	margin:30px;
+	border-top:#000 solid 10px;
+	border-left:#F00 dashed 10px;
+	border-right:#00F double 10px;
+	border-bottom:#000 dotted 10px;
+}
+</style>
+</head>
+
+<body>
+<h1>border</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>border:[length];</dt>
+        <dd>Box Model에 외각선을 그림</dd>
+		<dd>border-top / border-right / border-bottom/ border-left으로 개별 지정 가능</dd>
+        <dd>border-width / border-style / border-color 로개별적 속성지정 가능</dd>
+		<dd>속성별 개별지정도 가능함 : border-left-width:10px; </dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #outBox{
+			width:400px;
+            border:#f00 solid 5px;
+            background:#CCC;
+        }
+        
+        #inBox01{
+            background:#0F9;
+            margin:30px;
+            border-top:#000 solid 10px;
+            border-left:#F00 dashed 10px;
+            border-right:#00F double 10px;
+            border-bottom:#000 dotted 10px;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="outBox">
+        <div id="inBox01">
+            <p>
+            	inBox01<br />
+            	inBox01<br />
+                inBox01<br />
+                inBox01<br />
+                inBox01
+            </p>
+        </div>
+    </div>
+     </div>
+</div>
+
+<h1>border</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

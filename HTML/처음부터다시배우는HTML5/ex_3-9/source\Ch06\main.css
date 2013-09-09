@@ -1,0 +1,9 @@
+
+body {
+	padding:0;
+	margin:10px;
+	font:12px/14px Arial, Helvetica, sans-serif;
+	color: #333;
+}
+
+.firsthead { size:24px; color:#06F; font-family:'돋움'; }

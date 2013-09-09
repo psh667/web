@@ -1,0 +1,33 @@
+<taglib xmlns="http://java.sun.com/xml/ns/javaee" version="2.1">
+    <tlib-version>1.0</tlib-version>
+    <short-name>util</short-name>
+    <uri>/taglibs/util.tld</uri>
+    <tag-file>
+        <name>line</name>
+        <path>/META-INF/tags/line.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>newLine</name>
+        <path>/META-INF/tags/util/newLine.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>doubleLine</name>
+        <path>/META-INF/tags/util/doubleLine.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>box</name>
+        <path>/META-INF/tags/util/box.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>max</name>
+        <path>/META-INF/tags/util/max.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>newMax</name>
+        <path>/META-INF/tags/util/newMax.tag</path>
+    </tag-file>
+    <tag-file>
+        <name>compute</name>
+        <path>/META-INF/tags/util/compute.tag</path>
+    </tag-file>
+</taglib>

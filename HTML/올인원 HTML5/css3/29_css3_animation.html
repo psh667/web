@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>animation</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub{
+	text-align:center;
+	height:250px;
+}
+@keyframes animationSample{
+	from{
+	  	opacity:1.0;
+	  	-webkit-transform:rotate(0deg);
+	}
+	30%{
+	   background-color:#3C6;
+	}
+	50%{
+		opacity:0.1;
+	}
+	70%{
+	   background-color:#F96;
+	}
+	to{
+	  opacity:1.0;
+	  -webkit-transform:rotate(360deg);
+	}
+}
+@-webkit-keyframes animationSample{
+	from{
+	  	opacity:1.0;
+	  	-webkit-transform:rotate(0deg);
+	}
+	30%{
+	   background-color:#3C6;
+	}
+	50%{
+		opacity:0.1;
+	}
+	70%{
+	   background-color:#F96;
+	}
+	to{
+	  opacity:1.0;
+	  -webkit-transform:rotate(360deg);
+	}
+}
+#exampleSub img{
+	animation-name:animationSample;
+	animation-delay:2s;
+	animation-duration:4s;
+	animation-iteration-count:infinite;
+	animation-timing-function:ease-in-out;
+	animation-direction:alternate;
+	
+	-webkit-animation-name:animationSample;
+	-webkit-animation-delay:2s;
+	-webkit-animation-duration:4s;
+	-webkit-animation-iteration-count:infinite;
+	-webkit-animation-timing-function:ease-in-out;
+	-webkit-animation-direction:alternate;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : animation</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>animation</dt>
+        <dd>에니메이션을 지정함<dd>
+        <dd><code>animation-name</code> : 설정된 keyframe을 지정함</dd>
+        <dd><code>animation-duration</code> : 에니메이션이 실행시간을 지정함</dd>
+        <dd><code>animation-iteration-count</code> : 에니메이션이 반복 회수를 지정함</dd>
+        <dd><code>animation-timing-function</code> : 에니메이션이 속도 형태를 지정함</dd>
+		<dt>keyframes</dt>
+        <dd>에니메이션의 키프래임을 지정함</dd>
+        <dd><code>form</code> : 에니메이션의 시작 프래임를 설정함</dd>
+        <dd><code>to</code> : 에니메이션의 시작 프래임를 설정함</dd>
+        <dd>중간의 키프레임을 %단위로 지정할수 있음</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        @-webkit-keyframes animationSample{
+            from{
+              opacity:0.1;
+              -webkit-transform:rotate(0deg);
+            }
+            to{
+              opacity:1.0;
+              -webkit-transform:rotate(360deg);
+            }
+        }
+        #exampleSub img{
+            -webkit-animation-name:animationSample;
+            -webkit-animation-duration:3s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-timing-function:ease-in-out;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div><img src="img/coforwardQr2.png" width="200" alt="coForward.com" /></div>
+        <div><img src="img/coforwardText.png" width="200" alt="coForward.com" /></div>
+     </div>
+</div>
+
+<h1>CSS3 : animation</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

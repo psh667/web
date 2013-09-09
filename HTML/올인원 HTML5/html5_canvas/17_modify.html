@@ -1,0 +1,189 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>&lt;canvas&gt; 좌표 형태 변경</title>
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//사각형 그리기
+function addRect(){	
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	//사각형을 그림
+	ctx.fillRect(100,10,50,50);
+}
+//canvas 확대
+function scaleUp(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#f00';
+	ctx.scale(2,1.5)
+	addRect();
+	ctx.restore();
+}
+//canvas 축소
+function scaleDown(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#00f';
+	ctx.scale(0.5,0.5)
+	addRect();
+	ctx.restore();
+}
+//canvas 회전
+function rotate(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#ccf';
+	var angle=15*Math.PI/180
+	ctx.rotate(angle);
+	addRect();
+	ctx.restore();
+}
+//canvas 원점이동
+function translate(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#0f0';
+	ctx.translate(100,100);
+	addRect();
+	ctx.restore();
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; 좌표 형태 변경</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>캔버스의 좌표 형태를 변경</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>scale([sX],[sY])</code> : &lt;canvase&gt;의 가로 세로 방향 배율을 변경함</dd>
+        <dd><code>rotate([angle])</code> : &lt;canvase&gt;를 원점을 기준으로 회전시킴</dd>
+        <dd><code>translate([dX],[dY])</code> : &lt;canvase&gt;의 원점 좌표를 이동시킴.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[sX]</code> : X 좌표의 변경 배율</dd>
+        <dd><code>[sY]</code> : Y 좌표의 변경 배율</dd>
+        <dd><code>[dX]</code> : X 좌표의 이동 거리</dd>
+        <dd><code>[dY]</code> : Y 좌표의 이동 거리</dd>
+        <dd><code>[angle]</code> : 좌표계의 회전 각도 Radian 값으로 입력함</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.width=400;
+	 ctx=canvas.getContext("2d");
+	 ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//사각형 그리기
+function addRect(){	
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}	
+	//사각형을 그림
+	ctx.fillRect(100,10,50,50);
+}
+//canvas 확대
+function scaleUp(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#f00';
+	ctx.scale(2,1.5)
+	addRect();
+	ctx.restore();
+}
+//canvas 축소
+function scaleDown(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#00f';
+	ctx.scale(0.5,0.5)
+	addRect();
+	ctx.restore();
+}
+//canvas 회전
+function rotate(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#ccf';
+	var angle=15*Math.PI/180
+	ctx.rotate(angle);
+	addRect();
+	ctx.restore();
+}
+//canvas 원점이동
+function translate(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.save();
+	ctx.fillStyle='#0f0';
+	ctx.translate(100,100);
+	addRect();
+	ctx.restore();
+}
+ </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="400" height="200">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+        <div id="btnDiv">
+        	<p><button type="button" onClick="iniCanvas()">초기화</button>
+            <button type="button" onClick="addRect()">원본 사각형</button></p>
+            <p><button type="button" onClick="scaleUp()">canvas 확대</button>
+            <button type="button" onClick="scaleDown()">canvas 축소</button>
+            <button type="button" onClick="rotate()">canvas 회전</button>
+            <button type="button" onClick="translate()">canvas 원점 이동</button></p>
+        </div>
+     </div>   
+</div>
+<h1>&lt;canvas&gt; 좌표 형태 변경</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

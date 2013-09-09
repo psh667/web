@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;canvas&gt; : 사각형 그리기</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<script type="text/javascript">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.height=150;
+	 ctx=canvas.getContext("2d");
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//채워진 사각형#1
+function fillRect_1(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;} 
+	ctx.fillRect(25,25,100,100);
+}
+//해당 사각형 영역을 삭제
+function clearRect(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.clearRect(65,65,60,60);
+}
+//채워진 사각형#2  
+function fillRect_2(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.fillRect(50,70,50,100);
+}
+//선으로 그려진 사각형
+function strokeRect(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.strokeRect(60,80,100,60);
+}
+</script>
+</head>
+
+<body>
+<h1>&lt;canvas&gt; : 사각형 그리기</h1>
+<div id="description">
+	<h2>Description</h2>
+	<p>canvas를 이용하여 사각형을 그리는 방법은 3가지가 있다.</p>
+    <dl>
+    	<dt>형식</dt>
+        <dd><code>fillRect([x],[y],[dx],[dy])</code> : 색상으로 체워진 사각형을 그린다.</dd>
+        <dd><code>strokeRect([x],[y],[dx],[dy])</code> : 외각선으로 사각형을 그린다. </dd>
+        <dd><code>clearRect([x],[y],[dx],[dy])</code> : 사각형 영역으로 지운다.</dd>
+    	<dt>매개변수</dt>
+        <dd><code>[x]</code> : 사각형의 좌측상단의 x좌표</dd>
+        <dd><code>[y]</code> : 사각형의 좌측상단의 y좌표</dd>
+        <dd><code>[dx]</code> : 그려질 사각형의 폭</dd>
+        <dd><code>[dy]</code> : 그려질 사각형의 높이</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+//캔버스 초기화
+var canvas;
+var ctx;
+function iniCanvas(){
+	 canvas=document.getElementById("test");
+	 canvas.height=150;
+	 ctx=canvas.getContext("2d");
+}
+//캔버스 초기화의 체크
+function chkCtx(){
+	if(!ctx){
+		alert("canvas가 초기화 되지 않았거나 지원하지 않는 웹 브라우저입니다.");
+		return false;
+	}
+}
+//채워진 사각형#1
+function fillRect_1(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;} 
+	ctx.fillRect(25,25,100,100);
+}
+//해당 사각형 영역을 삭제
+function clearRect(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.clearRect(65,65,60,60);
+}
+//채워진 사각형#2  
+function fillRect_2(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.fillRect(50,70,50,100);
+}
+//선으로 그려진 사각형
+function strokeRect(){
+	var chkCtxReturn=chkCtx();
+	if(chkCtxReturn==false){return false;}
+	ctx.strokeRect(60,80,100,60);
+}
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+       <canvas id="test" width="300" height="150">
+            <div>
+            	<p>이 브라우저는 canvas를 지원하지 않습니다.</p>
+            </div>
+    	</canvas> 
+     	<div id="btnDiv">
+    	<button type="button" onClick="iniCanvas()">초기화</button>
+        <button type="button" onClick="fillRect_1()">사각형 1</button>
+        <button type="button" onClick="clearRect()">영역지우기</button>
+        <button type="button" onClick="fillRect_2()">사각형 2</button>
+        <button type="button" onClick="strokeRect()">선으로 그려진 사각형</button>
+    	</div>
+     </div>
+</div>
+<h1>&lt;canvas&gt; : 사각형 그리기</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

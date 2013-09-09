@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>gradient</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+
+#exampleSub h3{font-family:arial;font-weight:bold;text-transform:uppercase;color:#808285;padding-bottom:5px;}
+#exampleSub div{
+		margin-bottom:30px;
+		width:100%;
+		height:65px;
+}
+
+#exampleSub div p{
+	margin:0 3%;
+	width:42%;
+	height:50px;
+	text-align:center;
+	font-weight:bold;
+	color:#fff;
+	float:left;
+}
+#gradientBox01 .ex01{
+	background:-webkit-gradient(linear, left top, left bottom, from(#f00), to(#fff));
+	background:-moz-linear-gradient(top,#f00,#fff);
+}
+#gradientBox01 .ex02{
+	background:#676300;
+	background:-webkit-gradient(linear, left bottom, right top, from(#00f), to(#fff));
+	background:-moz-linear-gradient(bottom 45deg,#00f,#fff);
+}
+#gradientBox02 .ex01{
+	background:-webkit-gradient(radial, center center, 9, center center, 70, from(#0f0), to(#6caddf));
+	background:-moz-radial-gradient(circle, #0f0, #6caddf);
+}
+#gradientBox02 .ex02{
+	background:#6caddf; 
+	background:-webkit-gradient(radial, 20% 20%, 9, 40% 30%, 70, from(#ffea53), to(#6caddf), color-stop(30%, #00a88f));
+	background:-moz-radial-gradient(20% 20%, circle, #ffea53, #00a88f, #6caddf );
+}
+
+</style>
+</head>
+
+<body>
+<h1>CSS3 : gradient</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>gradient</dt>
+        <dd>gradient를 생성함</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #gradientBox01 .ex01{
+            background:-webkit-gradient(linear, left top, left bottom, from(#f00), to(#fff));
+            background:-moz-linear-gradient(top,#afbc22, #fff);
+        }
+        #gradientBox01 .ex02{
+            background:#676300;
+            background:-webkit-gradient(linear, left bottom, right top, from(#00f), to(#fff));
+            background:-moz-linear-gradient(bottom 45deg, #676300,  #fff);
+        }
+        #gradientBox02 .ex01{
+            background:-webkit-gradient(radial, center center, 9, center center, 70, from(#0f0), to(#6caddf));
+            background:-moz-radial-gradient(circle, #0f0, #6caddf);
+        }
+        #gradientBox02 .ex02{
+            background:#6caddf; 
+            background:-webkit-gradient(radial, 20% 20%, 9, 40% 30%, 70, from(#ffea53), to(#6caddf), color-stop(50%, #00a88f));
+            background:-moz-radial-gradient(20% 20%, circle, #ffea53, #00a88f, #6caddf);
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="gradientBox01">
+			<h3>gradient linear</h3>
+			<p class="ex01">Ex01</p>
+			<p class="ex02">Ex02</p>
+		</div>
+
+		<div id="gradientBox02">
+			<h3>gradient radial</h3>
+			<p class="ex01">Ex01</p>
+			<p class="ex02">Ex02</p>
+		</div>
+    </div>
+</div>
+
+<h1>CSS3 : gradient</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

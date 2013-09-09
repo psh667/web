@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/* 공통요소 설정 */
+body, div, h1, h2, h3, h4, h5, h6, p{margin:0;padding:0;}
+
+/*기본 font 설정*/
+body{
+	font-size:0.75em;
+	font-family:굴림,gulim,돋움,dotum,sans-serif;
+	color:#000;	
+	background:#f8f8f8;	
+}
+
+.t1{
+	font-size:140%;
+	color:#fff;
+	text-align:center;		
+	background:#4b7bbd;
+	padding:10px 0;
+	font-weight:bold;
+}
+.t2{
+	font-size:120%;
+	text-align:center;
+	background:#c3d2e8;	
+	padding-top:10px;
+	font-weight:bold;
+}
+.p1{
+	text-align:center;
+	background:#c3d2e8;
+	padding:10px 0;
+	margin-bottom:10px;
+}
+.bt2{
+	font-weight:bold;
+	text-align:center;	
+}
+.bp1{	
+	background:#fff;
+	padding:20px;
+	margin:10px;
+	border:#ccc solid 1px;	
+}
+#b1 .bp1{
+	background:#fff url(../img/html.png) 20px center no-repeat;
+	padding-left:120px;
+}
+#b2 .bp1{
+	background:#fff url(../img/css.png) 20px center no-repeat;
+	padding-left:90px;
+}
+#b3 .bp1{
+	background:#fff url(../img/javascript.png) 20px center no-repeat;
+	padding-left:205px;
+}
+.p2{
+	text-align:center;
+	background:#c3d2e8;
+	padding:10px 0;
+	margin-bottom:10px;
+}
+#f1{
+	text-align:center;
+	font-size:90%;
+	color:#999;
+	padding-bottom:10px;
+}
+#f1 div{display:inline;padding:0 5px;}
+
+#f1_n{font-style:italic}

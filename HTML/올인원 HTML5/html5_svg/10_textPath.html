@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;textPath&gt;:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#nscreen{
+		font-size:20px;
+		font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		fill:transparent;
+		stroke:#096;
+		stroke-width:1;
+		text-align:center;
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;textPath&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>&lt;textPath xlink:href="[#패스 아이디]"&gt;[문자열]&lt;textPath/&gt;</dt>
+        <dd>문자열이 흐를 패스를 지정</dd>
+        <dt>속성</dt>
+        <dd><code>#패스 아이디</code> : 패스로 지정한 요소의 ID</dd>
+        <dt>&lt;defs /&gt;</dt>
+        <dd>SVG 요소를 정의 화면에는 표시되지 않음</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	#nscreen{
+		font-size:20px;
+		font-family:Trebuchet MS, Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		fill:transparent;
+		stroke:#096;
+		stroke-width:1;
+		text-align:center;
+	}
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+&lt;defs&gt;
+    &lt;path id="textPath"
+        d="M80 150
+	        A10 10 0 0 1 250 150"/&gt;
+&lt;/defs&gt;
+&lt;text id="nscreen"&gt;
+    &lt;textPath xlink:href="#textPath" &gt;
+	    coForward : Web on The N Screen
+    &lt;/textPath&gt;
+&lt;/text&gt;
+&lt;/svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <svg>
+			<defs>
+                <path id="textPath"
+                      d="M80 150
+                      a10 10 0 0 1 250 150"/>
+                
+        	</defs>
+            <text id="nscreen">
+              <textPath xlink:href="#textPath" >
+                   coForward : Web on The N Screen
+              </textPath>
+            </text>  
+    	</svg>
+    </div>
+</div>
+<h1>&lt;textPath&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>border-radius</title>
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+
+<style type="text/css">
+div, p{
+	margin:0;
+	padding:0;
+}
+#exampleSub div{
+	margin:0 auto;
+	margin-bottom:10px;
+	width:80%;
+	padding:20px;
+	font-weight:bold;
+	text-align:center;
+}
+#borderBox02 ul li{
+		width:45%;
+		height:20px;
+		padding:10px 0;
+		list-style:none;
+		margin:5px;
+		float:left;
+}
+#borderBox01{
+	height:30px;
+	background:#CCC;
+	border-radius:50px;
+	-webkit-border-radius:50px;
+	-moz-border-radius:50px;
+}
+#borderBox02 .topLeft{
+		background:#d9da55;
+		border-top-left-radius:20px;
+		-webkit-border-top-left-radius:20px;
+		-moz-border-radius-topleft:20px;
+}
+#borderBox02 .topRight{
+		background:url(img/photo3.gif);
+		border-top-right-radius:20px;
+		-webkit-border-top-right-radius:20px;
+		-moz-border-radius-topright:20px;
+}
+#borderBox02 .bottomLeft{
+		background:url(img/photo3.gif);
+		border-bottom-left-radius:20px;
+		-webkit-border-bottom-left-radius:20px;
+		-moz-border-radius-bottomleft:20px;
+}
+#borderBox02 .bottomRight{
+		background:#676300;
+		border-bottom-right-radius:20px;
+		-webkit-border-bottom-right-radius:20px;
+		-moz-border-radius-bottomright:20px;
+}
+</style>
+</head>
+
+<body>
+<h1>CSS3 : border-radius</h1>
+<div id="description">
+	<h2>Description</h2>
+    <dl>
+    	<dt>border-radius:[length];</dt>
+        <dd>Box Model 외각선의 곡률 지정</dd>
+        <dt>속성 값</dt>
+        <dd><code>length</code> : 곡률의 크기 <code>border-top-left-radius</code> / <code>border-top-right-radius</code> / <code>border-bottom-left</code>/ <code>border-bottom-right</code>으로 개별 지정 가능</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>Code</h2>
+    <div class="codeArea">
+    &lt;style type="text/css"&gt;
+        #borderBox01{
+            height:30px;
+            background:#CCC;
+            border-radius:50px;
+            -webkit-border-radius:50px;
+            -moz-border-radius:50px;
+        }
+        #borderBox02 .topLeft{
+                background:#d9da55;
+                border-top-left-radius:20px;
+                -webkit-border-top-left-radius:20px;
+                -moz-border-radius-topleft:20px;
+        }
+        #borderBox02 .topRight{
+                background:#afbc22;
+                border-top-right-radius:20px;
+                -webkit-border-top-right-radius:20px;
+                -moz-border-radius-topright:20px;
+        }
+        #borderBox02 .bottomLeft{
+                background:#8a8d09;
+                border-bottom-left-radius:20px;
+                -webkit-border-bottom-left-radius:20px;
+                -moz-border-radius-bottomleft:20px;
+        }
+        #borderBox02 .bottomRight{
+                background:#676300;
+                border-bottom-right-radius:20px;
+                -webkit-border-bottom-right-radius:20px;
+                -moz-border-radius-bottomright:20px;
+        }
+    &lt;/style&gt;      
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <div id="borderBox01">CSS3 border-radius</div>
+		<div id="borderBox02">
+			<ul>
+				<li class="topLeft">top-left</li>
+				<li class="topRight">top-right</li>
+				<li class="bottomLeft">bottom-left</li>
+				<li class="bottomRight">bottom-right</li>
+			</ul>
+		</div>
+     </div>
+</div>
+
+<h1>CSS3 : border-radius</h1>
+<div class="printOnly"><span id="bookName">web on the N screen</span> <em class="coforward">co<span>Forward</span></em></div>
+</body>
+</html>

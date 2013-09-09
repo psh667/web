@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>contextmenu : 공통속성</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#exampleSub div{
+		margin:0 auto;
+		margin-bottom:15px;
+		padding:20px;
+		border:#CCC solid 5px;
+		text-align:center;
+	}
+	#exampleSub h3{
+		color:#808285;
+		padding-bottom:5px;
+		text-align:left;
+		font-family:arial;
+		font-weight:bold;
+	}
+	#exampleSub p{
+		margin:0 15px 15px 20px;
+		color:#03F;
+		font-size:15px;
+	}
+</style>
+</head>
+<body>
+<h1>contextmenu</h1>
+<div id="description">
+	<h2>description</h2>
+    <dl>
+		<dt>Description</dt>
+    	<dd>마우스 오른쪽 클릭메뉴 지정</dd>
+        <dd>2011년 2월 현재 지원 브라우저 없음</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;h2&gt;Example&lt;/h2&gt;
+    &lt;div id="exampleSub"&gt;
+    &lt;p contextmenu="testContextmenu"&gt;
+	    이 &amp;lt;p&amp;gt; 요소에는&lt;br /&gt; contextmenu="testContextmenu"가 적용되었습니다. 
+    &lt;/p&gt;
+    &lt;menu type="contextmenu" id="testContextmenu"&gt;
+        &lt;command label="첫번째 메뉴" /&gt;
+        &lt;command label="두번째 메뉴" /&gt;
+        &lt;command label="세번째 메뉴" /&gt;
+    &lt;/menu&gt;
+&lt;/div&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+    <div id="exampleSub">
+        <p contextmenu="testContextmenu">
+            이 &lt;p&gt; 요소에는<br /> contextmenu="testContextmenu"가 적용되었습니다. 
+        </p>
+        <menu type="contextmenu" id="testContextmenu">
+            <command label="첫번째 메뉴" />
+            <command label="두번째 메뉴" />
+            <command label="세번째 메뉴" />
+        </menu>
+	</div>
+</div>
+<h1>contextmenu</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>

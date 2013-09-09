@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/html5Reset.css" type="text/css" rel="stylesheet" />
+<link href="css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+<link rel="shortcut icon" href="img/coforward.ico" />
+<title>&lt;animateTransform &gt;:svg</title>
+<script type="text/javascript" src="js/viewCode.js"></script>
+<style type="text/css">
+	#rect01{
+		fill:url(#rGradientSample01);
+	}
+</style>
+</head>
+
+<body>
+<h1>&lt;animateTransform&gt;</h1>
+<div id="description">
+	<h2>Description</h2>
+	<dl>
+    	<dt>&lt;animateTransform&gt;</dt>
+        <dd>SVG요소의 에니메이션</dd>
+    </dl>
+</div>
+
+<div id="code">
+<h2>code</h2>
+    <div class="codeArea">
+&lt;!--CSS부분--&gt;
+&lt;style type="text/css"&gt;
+	#rect01{
+		fill:url(#rGradientSample01);
+	}
+&lt;/style&gt;
+
+&lt;!--SVG부분--&gt;
+&lt;svg&gt;
+	&lt;defs&gt;
+        &lt;radialGradient id="rGradientSample01"
+        cx="50%" cy="50%"
+        fx="40%" fy="40%" r="30%"
+        spreadMethod="reflect"
+        gradientTransform="skewX(15)"&gt;
+            &lt;stop offset="0%"   stop-color="#F00" stop-opacity="1"/&gt;
+            &lt;stop offset="50%"   stop-color="#0F0" stop-opacity="0.7"/&gt;
+            &lt;stop offset="100%" stop-color="#00F" stop-opacity="0.5" /&gt;
+        &lt;/radialGradient&gt;
+    &lt;/defs&gt;  
+    &lt;rect id="rect01" x="0" y="0" width="400" height="200"&gt;
+        &lt;animateTransform
+            attributeName="transform"
+            begin="0s"
+            dur="10s"
+            type="rotate"
+            from="0 60 60"
+            to="360 60 60"
+            repeatCount="indefinite" 
+        /&gt;	
+    &lt;/rect&gt;
+    &lt;image x="115" y="80" width="178" height="31" 
+        xlink:href="img/coforwardText.png" /&gt;
+&lt;svg&gt;
+    </div>
+</div>
+
+<div id="example">
+	<h2>Example</h2>
+        <div id="exampleSub">
+         <svg>
+         <defs>
+            <radialGradient id="rGradientSample01"
+               cx="50%" cy="50%"
+               fx="40%" fy="40%" r="30%"
+               spreadMethod="reflect"
+               gradientTransform="skewX(15)">
+              <stop offset="0%"   stop-color="#F00" stop-opacity="1"/>
+              <stop offset="50%"   stop-color="#0F0" stop-opacity="0.7"/>
+              <stop offset="100%" stop-color="#00F" stop-opacity="0.5" />
+            </radialGradient>
+        </defs>  
+        	<rect id="rect01" x="0" y="0" width="400" height="200">
+            	 <animateTransform
+                    attributeName="transform"
+                    begin="0s"
+                    dur="10s"
+                    type="rotate"
+                    from="0 60 60"
+                    to="360 60 60"
+                    repeatCount="indefinite" 
+                />	
+            </rect>
+        	<image x="115" y="80" width="178" height="31" 
+            	    xlink:href="img/coforwardText.png" />
+        <svg>
+    </div>
+</div>
+<h1>&lt;animateTransform&gt;</h1>
+<p class="printOnly">web on the N screen  - <em class="coforward">co<span>forward<span></em></p>
+</body>
+</html>
